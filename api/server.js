@@ -12,7 +12,7 @@ server.use('/api/projects', projectsRouter)
 const repoUrl = `https://github.com/labs14-lambda-app-store`
 
 server.get('/', (req, res) => {
-    res.json(`Lambda School Labs 14 - Lambda App Store - GitHub Repo: ${url}`)
+    res.json(`Lambda School Labs 14 - Lambda App Store - GitHub Repo: ${repoUrl}`)
 })
 
 module.exports = server;
