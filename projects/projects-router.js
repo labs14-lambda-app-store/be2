@@ -18,8 +18,8 @@ router.get('/', (req, res) => {
 //endpoint to post new project
 router.post('/', (req, res) => {
     projects.addProject(req.body)
-    .then(project => {
-        res.status(201).json({ message: 'Project added successfully!', project})
+    .then(() => {
+        res.status(201).json({ message: 'Project added successfully!'})
     })
     .catch(err => {
         res.status(500).json(err)
