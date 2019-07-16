@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         res.status(200).json(projects)
     })
     .catch(err => {
-        res.status(500).json(projects)
+        res.status(500).json(err)
     })
 })
 
