@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function getProjects() {
-    return db('projects').select('*')
+    return db('projects')
 }
