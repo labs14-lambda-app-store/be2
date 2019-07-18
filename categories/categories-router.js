@@ -5,7 +5,7 @@ const categories = require('./categories-model')
  
 //endpoint to get all categories
 router.get('/', (req, res) => {
-    categories.getcategories()
+    categories.getCategories()
     .then(categories => {
         res.status(200).json(categories)
     })
