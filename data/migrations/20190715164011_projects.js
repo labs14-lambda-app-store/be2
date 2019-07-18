@@ -1,5 +1,9 @@
 exports.up = function(knex, Promise) {
   return knex.schema
+    .createTable("categories", table => {
+      table.increments();
+      table.string("category_name");
+    })
     .createTable("projects", table => {
       table.increments();
       table
@@ -29,10 +33,6 @@ exports.up = function(knex, Promise) {
       table.boolean("in_development").defaultTo(true);
       table.boolean("is_live").defaultTo(false);
       table.boolean("is_featured").defaultTo(false);
-    })
-    .createTable("categories", table => {
-      table.increments();
-      table.string("category_name");
     });
 };
 
