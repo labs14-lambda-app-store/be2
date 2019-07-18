@@ -32,7 +32,7 @@ exports.up = function(knex, Promise) {
     })
     .createTable("categories", table => {
       table.increments();
-      table.string("category");
+      table.string("category_name");
     });
 };
 
