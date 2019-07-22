@@ -33,11 +33,28 @@ exports.up = function(knex, Promise) {
       table.boolean("in_development").defaultTo(true);
       table.boolean("is_live").defaultTo(false);
       table.boolean("is_featured").defaultTo(false);
+    })
+    .createTable("users", table => {
+      table.increments();
+      table
+        .string("username")
+        .notNullable()
+        .unique();
+      table
+        .string("email")
+        .notNullable()
+        .unique();
+      table.string("password").notNullable();
+      table.integer("sub_id").notNullable();
+      table.string("firstName").notNullable();
+      table.string("lastName").notNullable();
+      table.string("pictureURL");
     });
 };
 
 exports.down = function(knex, Promise) {
   return knex.schema
     .dropTableIfExists("projects")
-    .dropTableIfExists("categories");
+    .dropTableIfExists("categories")
+    .dropTableIfExists("users");
 };
