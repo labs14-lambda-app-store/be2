@@ -7,7 +7,6 @@ exports.seed = function(knex, Promise) {
       return knex("projects").insert([
         {
           name: "Lambda App Store 1",
-          // category_id: 1,
           description:
             "A place for Lambda Students to showcase their beautiful apps!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -19,7 +18,6 @@ exports.seed = function(knex, Promise) {
         },
         {
           name: "Lambda App Store 2",
-          // category_id: 1,
           description:
             "A place for Lambda Students to showcase their beautiful apps!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -31,7 +29,6 @@ exports.seed = function(knex, Promise) {
         },
         {
           name: "Lambda App Store 3",
-          // category_id: 1,
           description:
             "A place for Lambda Students to showcase their beautiful apps!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
