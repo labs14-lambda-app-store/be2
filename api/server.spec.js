@@ -3,7 +3,7 @@ const supertest = require('supertest')
 
 describe('Server', () => {
     it('Should be running on production env', () => {
-        expect(process.env.DB_ENV).toBe('production')
+        expect(process.env.DB_ENV).toBe('testing')
     })
     describe('GET /', () => {
         it('should respond with a 200 status code', () => {
