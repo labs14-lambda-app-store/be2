@@ -28,10 +28,10 @@ function addUser(user) {
 }
 
 // update the user
-function updateUser(id, post) {
+function updateUser(id, user) {
   return db("users")
     .where({ id })
-    .update(post);
+    .update(user);
 }
 
 // delete the user

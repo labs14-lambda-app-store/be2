@@ -6,7 +6,7 @@ module.exports = {
   deleteCategory
 };
 
-//get all projects
+//get all categories
 function getCategories() {
   return db("categories");
 }
