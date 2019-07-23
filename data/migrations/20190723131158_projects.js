@@ -5,14 +5,14 @@ exports.up = function(knex, Promise) {
       .string("name")
       .notNullable()
       .unique();
-    table
-      .integer("category_id")
-      .unsigned()
-      .notNullable()
-      .references("id")
-      .inTable("categories")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+    // table
+    //   .integer("category_id")
+    //   .unsigned()
+    //   .notNullable()
+    //   .references("id")
+    //   .inTable("categories")
+    //   .onDelete("CASCADE")
+    //   .onUpdate("CASCADE");
     table.boolean("is_approved").defaultTo(false);
     table.string("description");
     table
