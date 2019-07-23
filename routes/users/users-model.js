@@ -8,28 +8,33 @@ module.exports = {
   deleteUser
 };
 
+// get all users
 function getUsers() {
   return db("users");
 }
 
+// get user by id
 function getUserById(id) {
   return db("users")
     .where({ id })
     .first();
 }
 
-function addUser(want) {
+// post for adding a user
+function addUser(user) {
   return db("users")
-    .insert(want)
+    .insert(user)
     .then(ids => ({ id: ids[0] }));
 }
 
+// update the user
 function updateUser(id, post) {
   return db("users")
     .where({ id })
     .update(post);
 }
 
+// delete the user
 function deleteUser(id) {
   return db("users")
     .where({ id })
