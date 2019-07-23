@@ -39,9 +39,31 @@ describe("Projects", () => {
       };
       const res = await supertest(server)
         .post("/api/projects")
-        .send(project);
+        .send(project)
       expect(res.status).toBe(201);
     });
+    it("should return with JSON", async () => {
+        const project =   {
+          name: "Lambda App Store 1",
+          category_id: 1,
+          is_approved: 0,
+          description: "A place for Lambda Students to showcase their beautiful apps!",
+          hosted_url: "example hosted url 1",
+          frontend_url: "https://github.com/labs14-lambda-app-store/be2",
+          backend_url: "https://github.com/labs14-lambda-app-store/FE2",
+          submitted_at: "July 18th at 1:00 PM",
+          approved_at: "",
+          display_image: "example url",
+          tags: "example tags",
+          in_development: 1,
+          is_live: 0,
+          is_featured: 0
+        };
+        const res = await supertest(server)
+          .post("/api/projects")
+          .send(project)
+        .expect('content-type', /json/i)
+      })
     it("should insert projects", async () => {
       await addProject({
         name: "Lambda App Store 1",
