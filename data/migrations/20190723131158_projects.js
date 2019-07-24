@@ -13,6 +13,7 @@ exports.up = function(knex, Promise) {
     //   .inTable("categories")
     //   .onDelete("CASCADE")
     //   .onUpdate("CASCADE");
+    table.string("category_name").notNullable();
     table.boolean("is_approved").defaultTo(false);
     table.string("description");
     table
