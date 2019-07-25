@@ -6,7 +6,7 @@ const Projects = require("./projects-model");
 //endpoint to get all projects
 router.get("/", async (req, res) => {
   try {
-    const projects = await Projects.findProjects();
+    const projects = await Projects.getProjects();
     res.status(200).json(projects);
   } catch (error) {
     console.log("Getting projects error: ", error);
@@ -17,8 +17,9 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const project = await Projects.getProjectById(req.params.id);
+    const tags = await Projects.findProjectTags(req.params.id);
     if (project) {
-      res.status(200).json(project);
+      res.status(200).json({ ...project, tags });
     } else {
       res
         .status(404)

@@ -6,7 +6,7 @@ module.exports = {
   addProject,
   updateProject,
   deleteProject,
-  findProjects
+  findProjectTags
 };
 
 //get all projects
@@ -42,9 +42,10 @@ function deleteProject(id) {
     .del();
 }
 
-function findProjects() {
+function findProjectTags(id) {
   return db("projects as p")
     .join("projects_tags as pt", "pt.project_id", "p.id")
-    .join("tags at t", "t.id", "pt.tag_id")
-    .select("p.*", "t.*");
+    .join("tags as t", "t.id", "pt.tag_id")
+    .select("t.*")
+    .where("p.id", id);
 }

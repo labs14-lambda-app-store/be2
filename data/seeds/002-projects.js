@@ -16,8 +16,7 @@ exports.seed = function(knex, Promise) {
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
           hosted_url: "example hosted url 1",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "example url",
-          tags: "example tags"
+          display_image: "example url"
         },
         {
           name: "Lambda App Store 2",
@@ -28,8 +27,7 @@ exports.seed = function(knex, Promise) {
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
           hosted_url: "example hosted url 2",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "example url",
-          tags: "example tags"
+          display_image: "example url"
         },
         {
           name: "Lambda App Store 3",
@@ -40,8 +38,7 @@ exports.seed = function(knex, Promise) {
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
           hosted_url: "example hosted url 3",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "example url",
-          tags: "example tags"
+          display_image: "example url"
         }
       ]);
     });
