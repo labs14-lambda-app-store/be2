@@ -1,4 +1,14 @@
-const dbConnection = process.env.DATABASE_URL;
+require("dotenv").config();
+
+const localPgConnection = {
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT
+};
+
+const dbConnection = process.env.DATABASE_URL || localPgConnection;
 
 module.exports = {
   development: {
@@ -16,7 +26,7 @@ module.exports = {
   testing: {
     client: "sqlite3",
     connection: {
-      filename: './data/test.db3'
+      filename: "./data/test.db3"
     },
     useNullAsDefault: true,
     migrations: {
@@ -27,15 +37,14 @@ module.exports = {
     }
   },
 
-
   production: {
-    client: 'pg',
+    client: "pg",
     connection: dbConnection,
     migrations: {
-      directory: './data/migrations',
+      directory: "./data/migrations"
     },
     seeds: {
-      directory: './data/seeds',
-    },
-  },
+      directory: "./data/seeds"
+    }
+  }
 };
