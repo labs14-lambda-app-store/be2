@@ -1,7 +1,9 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex
-    .raw("TRUNCATE TABLE tags RESTART IDENTITY CASCADE")
+    .raw(
+      "TRUNCATE TABLE tags RESTART IDENTITY CASCADE"
+    ) /* This .raw function allows for truncation while being referenced in a foreign key */
     .then(function() {
       // Inserts seed entries
       return knex("tags").insert([
