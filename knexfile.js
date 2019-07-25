@@ -11,31 +11,31 @@ const localPgConnection = {
 const dbConnection = process.env.DATABASE_URL || localPgConnection;
 
 module.exports = {
-  development: {
-    client: "pg",
-    connection: dbConnection,
-    migrations: {
-      directory: "./data/migrations"
-    },
-    seeds: {
-      directory: "./data/seeds"
-    },
-    useNullAsDefault: true
-  },
+  // development: {
+  //   client: "pg",
+  //   connection: dbConnection,
+  //   migrations: {
+  //     directory: "./data/migrations"
+  //   },
+  //   seeds: {
+  //     directory: "./data/seeds"
+  //   },
+  //   useNullAsDefault: true
+  // },
 
-  testing: {
-    client: "sqlite3",
-    connection: {
-      filename: "./data/test.db3"
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: "./data/migrations"
-    },
-    seeds: {
-      directory: "./data/seeds"
-    }
-  },
+  // testing: {
+  //   client: "sqlite3",
+  //   connection: {
+  //     filename: "./data/test.db3"
+  //   },
+  //   useNullAsDefault: true,
+  //   migrations: {
+  //     directory: "./data/migrations"
+  //   },
+  //   seeds: {
+  //     directory: "./data/seeds"
+  //   }
+  // },
 
   production: {
     client: "pg",
