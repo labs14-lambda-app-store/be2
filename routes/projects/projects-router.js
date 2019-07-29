@@ -5,6 +5,7 @@ const Projects = require("./projects-model");
 
 //endpoint to get all projects
 router.get("/", async (req, res) => {
+  console.log("req.query : ", req.query);
   let page = req.query.page || 1;
   try {
     const projects = await Projects.getProjects(page);
