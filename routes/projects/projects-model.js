@@ -6,12 +6,17 @@ module.exports = {
   addProject,
   updateProject,
   deleteProject,
-  findProjectTags
+  findProjectTags,
+  findProjectsByOffset
 };
 
 //get all projects
-function getProjects() {
-  return db("projects");
+function getProjects(page) {
+  let limit = 5;
+  let offset = (page - 1) * limit;
+  return db("projects")
+    .limit(limit)
+    .offset(offset);
 }
 
 //get project by project id
@@ -48,4 +53,8 @@ function findProjectTags(id) {
     .join("tags as t", "t.id", "pt.tag_id")
     .select("t.*")
     .where("p.id", id);
+}
+
+function findProjectsByOffset(limit, offset) {
+  return db.raw("SELECT * FROM projects LIMIT $1 OFFSET $2", [limit, offset]);
 }
