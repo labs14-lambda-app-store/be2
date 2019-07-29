@@ -5,14 +5,7 @@ exports.up = function(knex, Promise) {
       .string("name")
       .notNullable()
       .unique();
-    // table
-    //   .integer("category_id")
-    //   .unsigned()
-    //   .notNullable()
-    //   .references("id")
-    //   .inTable("categories")
-    //   .onDelete("CASCADE")
-    //   .onUpdate("CASCADE");
+    table.string("category_name").notNullable();
     table.boolean("is_approved").defaultTo(false);
     table.string("description");
     table
@@ -24,7 +17,6 @@ exports.up = function(knex, Promise) {
     table.string("submitted_at").notNullable();
     table.string("approved_at").defaultTo("");
     table.string("display_image");
-    table.string("tags");
     table.boolean("in_development").defaultTo(true);
     table.boolean("is_live").defaultTo(false);
     table.boolean("is_featured").defaultTo(false);
@@ -34,3 +26,10 @@ exports.up = function(knex, Promise) {
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("projects");
 };
+
+
+// knex.schema.hasTable("projects", exists => {
+//   if (!exists) {
+    
+//   }
+// });

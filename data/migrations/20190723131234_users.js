@@ -20,3 +20,11 @@ exports.up = function(knex, Promise) {
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("users");
 };
+
+
+
+// knex.schema.hasTable("users", exists => {
+//   if (!exists) {
+    
+//   }
+// });

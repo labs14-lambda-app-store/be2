@@ -8,3 +8,11 @@ exports.up = function(knex, Promise) {
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("tags");
 };
+
+
+
+// knex.schema.hasTable("tags", exists => {
+//   if (!exists) {
+
+//   }
+// });
