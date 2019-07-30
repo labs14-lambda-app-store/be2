@@ -46,7 +46,7 @@ exports.seed = function(knex, Promise) {
           name: "RePlate",
           category_name: "food & drink",
           description:
-            "The only app to bridge the gap from rubbish bins to rumbly tummies! RePlate takes the unused and ugly foods from restaurants and stores before it gets tossed, to rots in a landfill and turn into methane, aka the invisible wool blanket around the planet trapping all the heat.... and gives it to hungry people!",
+            "The only app to bridge the gap from rubbish bins to rumbly tummies! RePlate takes the unused and ugly foods from restaurants and stores before it gets tossed, and gives it to hungry people!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
           hosted_url: "example hosted url 3",
