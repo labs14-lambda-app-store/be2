@@ -16,37 +16,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/", async (req, res, next) => {
-//   try {
-// const page = req.query.page || 1;
-// const limit = 5;
-// const offset = (page - 1) * limit;
-//     const projects = Projects.findProjectsByOffset(limit, offset);
-//     res.status(200).json(projects);
-//   } catch (error) {
-//     console.log("Getting projects error: ", error);
-//     res.status(500).json({ message: "error getting projects ", error });
-//   }
-// });
-
-// router.get("/", async (req, res) => {
-//   //const _ispublished = req.query.published;
-
-//   try {
-//     await Projects.populate({
-//       path: "posts",
-//       match,
-//       options: {
-//         limit: parseInt(req.query.limit),
-//         skip: parseInt(req.query.skip)
-//       }
-//     }).execPopulate();
-//     res.send(req.user.posts);
-//   } catch (error) {
-//     res.status(500).send();
-//   }
-// });
-
 router.get("/:id", async (req, res) => {
   try {
     const project = await Projects.getProjectById(req.params.id);
