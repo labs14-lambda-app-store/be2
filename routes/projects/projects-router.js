@@ -20,18 +20,19 @@ router.get("/", async (req, res) => {
   console.log("req.query : ", req.query);
   let page = req.query.page || 1;
   try {
-    const projects = await Projects.getProjects(page);
-    for (i = 0; i < projects.length; i++) {
-      const project = projects[i];
+    const projects = await Projects.getProjects();
+    const projectsPerPage = await Projects.getProjectsPerPage(page);
+    for (i = 0; i < projectsPerPage.length; i++) {
+      const project = projectsPerPage[i];
       project.tags = await Projects.findProjectTags(project.id);
     }
-    // if (project) {
-    res.status(200).json(projects);
-    // } else {
-    //   res
-    //     .status(404)
-    //     .json({ message: "The project with the specified ID does not exist." });
-    // }
+    res
+      .status(200)
+      .json({
+        projects: projectsPerPage,
+        projectLength: projects.length,
+        message: "Did somebody order some projects"
+      });
   } catch (error) {
     console.log("Getting projects error: ", error);
     res.status(500).json({ message: "error getting projects ", error });
