@@ -7,22 +7,24 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex("tags").insert([
-        { tag_name: "Example tag  1" },
-        { tag_name: "Example tag 2" },
-        { tag_name: "Example tag 3" },
-        { tag_name: "Example tag 4" },
-        { tag_name: "Example tag 5" },
-        { tag_name: "Example tag 6" },
-        { tag_name: "Example tag 7" },
-        { tag_name: "Example tag 8" },
-        { tag_name: "Example tag 9" },
-        { tag_name: "Example tag 10" },
-        { tag_name: "Example tag 11" },
-        { tag_name: "Example tag 12" },
-        { tag_name: "Example tag 13" },
-        { tag_name: "Example tag 14" },
-        { tag_name: "Example tag 15" },
-        { tag_name: "Example tag 16" }
+        { tag_name: "JavaScript" },
+        { tag_name: "CSS" },
+        { tag_name: "React" },
+        { tag_name: "Node" },
+        { tag_name: "Java" },
+        { tag_name: "Python" },
+        { tag_name: "React Native" },
+        { tag_name: "C#" },
+        { tag_name: "C++" },
+        { tag_name: "Android" },
+        { tag_name: "iOS" },
+        { tag_name: "Ruby" },
+        { tag_name: "Postgres" },
+        { tag_name: "MongoDB" },
+        { tag_name: "TypeScript" },
+        { tag_name: "Material-UI" },
+        { tag_name: "Reactstrap" },
+        { tag_name: "Bootstrap" }
       ]);
     });
 };

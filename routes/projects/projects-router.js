@@ -4,10 +4,35 @@ const router = express.Router();
 const Projects = require("./projects-model");
 
 //endpoint to get all projects
+// router.get("/", async (req, res) => {
+//   console.log("req.query : ", req.query);
+//   let page = req.query.page || 1;
+//   try {
+//     const projects = await Projects.getProjects(page);
+//     res.status(200).json(projects);
+//   } catch (error) {
+//     console.log("Getting projects error: ", error);
+//     res.status(500).json({ message: "error getting projects ", error });
+//   }
+// });
+
 router.get("/", async (req, res) => {
+  console.log("req.query : ", req.query);
+  let page = req.query.page || 1;
   try {
     const projects = await Projects.getProjects();
-    res.status(200).json(projects);
+    const projectsPerPage = await Projects.getProjectsPerPage(page);
+    for (i = 0; i < projectsPerPage.length; i++) {
+      const project = projectsPerPage[i];
+      project.tags = await Projects.findProjectTags(project.id);
+    }
+    res
+      .status(200)
+      .json({
+        projects: projectsPerPage,
+        projectLength: projects.length,
+        message: "Did somebody order some projects"
+      });
   } catch (error) {
     console.log("Getting projects error: ", error);
     res.status(500).json({ message: "error getting projects ", error });

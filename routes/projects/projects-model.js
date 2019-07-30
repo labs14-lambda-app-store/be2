@@ -2,6 +2,7 @@ const db = require("../../data/dbConfig.js");
 
 module.exports = {
   getProjects,
+  getProjectsPerPage,
   getProjectById,
   addProject,
   updateProject,
@@ -12,6 +13,14 @@ module.exports = {
 //get all projects
 function getProjects() {
   return db("projects");
+}
+
+function getProjectsPerPage(page) {
+  let limit = 12;
+  let offset = (page - 1) * limit;
+  return db("projects")
+    .limit(limit)
+    .offset(offset);
 }
 
 //get project by project id
