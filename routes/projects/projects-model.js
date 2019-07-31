@@ -26,7 +26,7 @@ function getProjects() {
 // }
 
 function getProjectsPerPage(page, searchParameter) {
-  let limit = 3;
+  let limit = 12;
   let offset = (page - 1) * limit;
   console.log(searchParameter);
   if (searchParameter) {
@@ -38,9 +38,6 @@ function getProjectsPerPage(page, searchParameter) {
       .limit(limit)
       .offset(offset);
   }
-
-  // .limit(limit)
-  // .offset(offset);
 }
 
 //get project by project id
