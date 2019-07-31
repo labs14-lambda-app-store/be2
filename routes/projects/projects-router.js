@@ -10,18 +10,19 @@ router.get("/", async (req, res) => {
   let page = req.query.page || 1;
   console.log(searchParameter);
   try {
-    const projects = await Projects.getProjects();
+    const projects = await Projects.getProjects(searchParameter);
     const projectsPerPage = await Projects.getProjectsPerPage(
       page,
       searchParameter
     );
+    console.log(projects);
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
     }
     res.status(200).json({
       projects: projectsPerPage.rows || projectsPerPage,
-      projectLength: projects.length,
+      projectLength: projects.length || projects.rowCount,
       message: "Did somebody order some projects"
     });
   } catch (error) {

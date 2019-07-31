@@ -11,8 +11,14 @@ module.exports = {
 };
 
 //get all projects
-function getProjects() {
-  return db("projects");
+function getProjects(searchParameter) {
+  if (searchParameter) {
+    return db.raw(
+      `SELECT * FROM projects WHERE UPPER(name) LIKE UPPER('%${searchParameter}%') or UPPER(description) LIKE UPPER('%${searchParameter}%')`
+    );
+  } else {
+    return db("projects");
+  }
 }
 
 //sets pagination while getting set amount of projects at a time.  Currently 12 projects per page.
