@@ -11,7 +11,7 @@ exports.down = function(knex, Promise) {
 
 //Fix for potential future bug involving upgrading migrations
 
-knex.schema.hasTable("categories", exists => {
-  if (!exists) {
-  }
-});
+// knex.schema.hasTable("categories", exists => {
+//   if (!exists) {
+//   }
+// });
