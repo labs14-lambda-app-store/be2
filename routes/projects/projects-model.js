@@ -16,12 +16,31 @@ function getProjects() {
 }
 
 //sets pagination while getting set amount of projects at a time.  Currently 12 projects per page.
-function getProjectsPerPage(page) {
-  let limit = 12;
+// function getProjectsPerPage(page, projectName) {
+//   let limit = 12;
+//   let offset = (page - 1) * limit;
+// return db("projects")
+//   .where({ name: projectName })
+//   .limit(limit)
+//   .offset(offset);
+// }
+
+function getProjectsPerPage(page, searchParameter) {
+  let limit = 3;
   let offset = (page - 1) * limit;
-  return db("projects")
-    .limit(limit)
-    .offset(offset);
+  console.log(searchParameter);
+  if (searchParameter) {
+    return db.raw(
+      `SELECT * FROM projects WHERE UPPER(name) LIKE UPPER('%${searchParameter}%') or UPPER(description) LIKE UPPER('%${searchParameter}%') LIMIT ${limit} OFFSET ${offset}`
+    );
+  } else {
+    return db("projects")
+      .limit(limit)
+      .offset(offset);
+  }
+
+  // .limit(limit)
+  // .offset(offset);
 }
 
 //get project by project id

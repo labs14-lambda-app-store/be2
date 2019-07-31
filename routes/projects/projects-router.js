@@ -6,16 +6,21 @@ const Projects = require("./projects-model");
 //endpoint to get all projects
 router.get("/", async (req, res) => {
   console.log("req.query : ", req.query);
+  let searchParameter = req.query.search;
   let page = req.query.page || 1;
+  console.log(searchParameter);
   try {
     const projects = await Projects.getProjects();
-    const projectsPerPage = await Projects.getProjectsPerPage(page);
+    const projectsPerPage = await Projects.getProjectsPerPage(
+      page,
+      searchParameter
+    );
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
     }
     res.status(200).json({
-      projects: projectsPerPage,
+      projects: projectsPerPage.rows || projectsPerPage,
       projectLength: projects.length,
       message: "Did somebody order some projects"
     });
