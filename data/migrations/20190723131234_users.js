@@ -21,10 +21,10 @@ exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("users");
 };
 
-
+//Fix for potential future bug involving upgrading migrations
 
 // knex.schema.hasTable("users", exists => {
 //   if (!exists) {
-    
+
 //   }
 // });

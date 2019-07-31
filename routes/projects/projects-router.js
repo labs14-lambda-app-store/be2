@@ -4,18 +4,6 @@ const router = express.Router();
 const Projects = require("./projects-model");
 
 //endpoint to get all projects
-// router.get("/", async (req, res) => {
-//   console.log("req.query : ", req.query);
-//   let page = req.query.page || 1;
-//   try {
-//     const projects = await Projects.getProjects(page);
-//     res.status(200).json(projects);
-//   } catch (error) {
-//     console.log("Getting projects error: ", error);
-//     res.status(500).json({ message: "error getting projects ", error });
-//   }
-// });
-
 router.get("/", async (req, res) => {
   console.log("req.query : ", req.query);
   let page = req.query.page || 1;
@@ -24,25 +12,24 @@ router.get("/", async (req, res) => {
     const projectsPerPage = await Projects.getProjectsPerPage(page);
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
-      project.tags = await Projects.findProjectTags(project.id);
+      project.tags = await Projects.getProjectTags(project.id);
     }
-    res
-      .status(200)
-      .json({
-        projects: projectsPerPage,
-        projectLength: projects.length,
-        message: "Did somebody order some projects"
-      });
+    res.status(200).json({
+      projects: projectsPerPage,
+      projectLength: projects.length,
+      message: "Did somebody order some projects"
+    });
   } catch (error) {
     console.log("Getting projects error: ", error);
     res.status(500).json({ message: "error getting projects ", error });
   }
 });
 
+//endpoint to get project by id
 router.get("/:id", async (req, res) => {
   try {
     const project = await Projects.getProjectById(req.params.id);
-    const tags = await Projects.findProjectTags(req.params.id);
+    const tags = await Projects.getProjectTags(req.params.id);
     if (project) {
       res.status(200).json({ ...project, tags });
     } else {
@@ -56,7 +43,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-//endpoint to post new project
+//endpoint to create new project
 router.post("/", async (req, res) => {
   try {
     const project = await Projects.addProject(req.body);
@@ -67,6 +54,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//endpoint to update existing project
 router.put("/:id", async (req, res) => {
   const project = req.body;
   try {
@@ -84,6 +72,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//endpoint to delete project by id
 router.delete("/:id", async (req, res) => {
   try {
     const count = await Projects.deleteProject(req.params.id);
