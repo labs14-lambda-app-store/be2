@@ -22,15 +22,6 @@ function getProjects(searchParameter) {
 }
 
 //sets pagination while getting set amount of projects at a time.  Currently 12 projects per page.
-// function getProjectsPerPage(page, projectName) {
-//   let limit = 12;
-//   let offset = (page - 1) * limit;
-// return db("projects")
-//   .where({ name: projectName })
-//   .limit(limit)
-//   .offset(offset);
-// }
-
 function getProjectsPerPage(page, searchParameter) {
   let limit = 12;
   let offset = (page - 1) * limit;
