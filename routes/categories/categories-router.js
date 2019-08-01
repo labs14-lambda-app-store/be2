@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//endpoint to add new category
 router.post("/", async (req, res) => {
   try {
     const category = await Categories.addCategory(req.body);
@@ -24,6 +25,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//endpoint to delete existing category by id
 router.delete("/:id", async (req, res) => {
   try {
     const count = await Categories.deleteCategory(req.params.id);

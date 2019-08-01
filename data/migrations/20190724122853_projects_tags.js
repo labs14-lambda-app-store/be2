@@ -24,10 +24,10 @@ exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("projects_tags");
 };
 
-
+//Fix for potential future bug involving upgrading migrations
 
 // knex.schema.hasTable("projects_tags", exists => {
 //   if (!exists) {
-    
+
 //   }
 // });

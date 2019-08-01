@@ -2,7 +2,8 @@ const router = require("express").Router();
 
 const Users = require("./users-model.js");
 
-// router.get("/", restricted, async (req, res) => {
+//endpoint to get all users
+// router.get("/", restricted, async (req, res) => {    <----- restricted endpoints not yet set up because convenience reasons???
 router.get("/", async (req, res) => {
   try {
     const users = await Users.getUsers();
@@ -13,6 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// endpoint to get user by id
 router.get("/:id", async (req, res) => {
   try {
     const user = await Users.getUserById(req.params.id);
@@ -29,6 +31,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//endpoint to create a new user
 router.post("/", async (req, res) => {
   try {
     const user = await Users.addUser(req.body);
@@ -39,6 +42,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//endpoint to update existing user by id
 router.put("/:id", async (req, res) => {
   const user = req.body;
   try {
@@ -56,6 +60,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//endpoint to delete existing user by id
 router.delete("/:id", async (req, res) => {
   try {
     const count = await Users.deleteUser(req.params.id);
