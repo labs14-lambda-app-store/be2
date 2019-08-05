@@ -23,3 +23,11 @@ exports.up = function(knex, Promise) {
     exports.down = function(knex, Promise) {
       return knex.schema.dropTableIfExists("project_categories");
     };
+
+    //Fix for potential future bug involving upgrading migrations
+
+// knex.schema.hasTable("users", exists => {
+//   if (!exists) {
+
+//   }
+// });
