@@ -22,7 +22,8 @@ exports.seed = function(knex, Promise) {
         { category_name: "Navigation" },
         { category_name: "Sports" },
         { category_name: "Travel" },
-        { category_name: "Weather" }
+        { category_name: "Weather" },
+        { category_name: "Miscellaneous" }
       ]);
     });
 };
