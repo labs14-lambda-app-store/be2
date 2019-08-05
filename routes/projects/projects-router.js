@@ -7,7 +7,7 @@ const Projects = require("./projects-model");
 router.get("/", async (req, res) => {
   console.log("req.query : ", req.query);
   let searchParameter = req.query.search;
-  let page = req.query.page || 1;
+  let page = parseInt(req.query.page) || 1;
   console.log(searchParameter);
   try {
     const projects = await Projects.getProjects(searchParameter);
