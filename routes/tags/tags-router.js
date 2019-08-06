@@ -9,8 +9,12 @@ router.get("/", async (req, res) => {
     const tags = await Tags.getTags();
     res.status(200).json(tags);
   } catch (err) {
-    console.log("Error getting the tag ", err);
-    res.status(500).json(err);
+    if (environment === "production") {
+      res.status(500).json({ message: "error getting tags " });
+    } else {
+      console.log("Error getting the tag ", err);
+      res.status(500).json(err);
+    }
   }
 });
 
@@ -18,10 +22,14 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const tag = await Tags.addTag(req.body);
-    res.status(201).json({ message: "User successfully created." });
+    res.status(201).json({ message: "Tag successfully created." });
   } catch (error) {
-    console.log("Creating tag error ", error);
-    res.status(500).json({ message: "Error creating that user.", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "error creating that tag " });
+    } else {
+      console.log("Creating tag error ", error);
+      res.status(500).json({ message: "Error creating that tag.", error });
+    }
   }
 });
 
@@ -39,8 +47,12 @@ router.delete("/:id", async (req, res) => {
       });
     }
   } catch (error) {
-    console.log("Delete tag error: ", error);
-    res.status(500).json({ message: "Error deleting that tag.", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "error deleting that tag " });
+    } else {
+      console.log("Delete tag error: ", error);
+      res.status(500).json({ message: "Error deleting that tag.", error });
+    }
   }
 });
 
