@@ -5,6 +5,7 @@ module.exports = {
   getProjectsPerPage,
   getProjectById,
   getProjectTags,
+  getProjectCategory,
   addProject,
   updateProject,
   deleteProject
@@ -52,6 +53,14 @@ function getProjectTags(id) {
     .select("t.*")
     .where("p.id", id);
 }
+
+
+//get category for a project
+function getProjectCategory(id) {
+  return db("categories as c")
+    .where("c.id", id);
+}
+
 
 //add new project
 function addProject(project) {
