@@ -5,7 +5,6 @@ exports.up = function(knex, Promise) {
       .string("name")
       .notNullable()
       .unique();
-    table.string("category_name").notNullable();
     table.boolean("is_approved").defaultTo(false);
     table.string("description");
     table
@@ -20,6 +19,14 @@ exports.up = function(knex, Promise) {
     table.boolean("in_development").defaultTo(true);
     table.boolean("is_live").defaultTo(false);
     table.boolean("is_featured").defaultTo(false);
+    table
+      .integer("category_id")
+      .unsigned()
+      .notNullable()
+      .references("id")
+      .inTable("categories")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
   });
 };
 
