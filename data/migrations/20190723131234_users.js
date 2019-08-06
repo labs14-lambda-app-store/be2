@@ -9,8 +9,7 @@ exports.up = function(knex, Promise) {
       .string("email")
       .notNullable()
       .unique();
-    table.string("password").notNullable();
-    table.integer("sub_id").notNullable();
+    table.string("sub_id").notNullable();
     table.string("first_name").notNullable();
     table.string("last_name").notNullable();
     table.string("pictureURL");
