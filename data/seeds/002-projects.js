@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex("projects").insert([
-        {
+        { //1
           name: "Lambda App Store",
           category_name: "education",
           description:
