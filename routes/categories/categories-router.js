@@ -9,8 +9,12 @@ router.get("/", async (req, res) => {
     const categories = await Categories.getCategories();
     res.status(200).json(categories);
   } catch (error) {
-    console.log("Get categories error", error);
-    res.status(500).json({ message: "Error getting categories", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "Error getting categories" });
+    } else {
+      console.log("Get categories error", error);
+      res.status(500).json({ message: "Error getting categories", error });
+    }
   }
 });
 
@@ -20,8 +24,12 @@ router.post("/", async (req, res) => {
     const category = await Categories.addCategory(req.body);
     res.status(201).json({ message: "Category successfully created." });
   } catch (error) {
-    console.log("Create category error", error);
-    res.status(500).json({ message: "Error creating that category", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "Error creating that category" });
+    } else {
+      cconsole.log("Create category error", error);
+      res.status(500).json({ message: "Error creating that category", error });
+    }
   }
 });
 
@@ -39,8 +47,12 @@ router.delete("/:id", async (req, res) => {
       });
     }
   } catch (error) {
-    console.log("Delete category error", error);
-    res.status(500).json({ message: "Error deleting that category", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "Error deleting that category" });
+    } else {
+      console.log("Delete category error", error);
+      res.status(500).json({ message: "Error deleting that category", error });
+    }
   }
 });
 
