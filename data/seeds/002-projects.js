@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
       return knex("projects").insert([
         { //1
           name: "Lambda App Store",
-          category_name: "education",
+          category_id: 3,
           description:
             "A place for Lambda Students to showcase their beautiful apps!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -19,9 +19,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?technology,computer,typing"
         },
-        {
+        { //2
           name: "Crap Map App",
-          category_name: "medical",
+          category_id: 6,
           description:
             "BM in the AM or PM! Crap Map App finds you the nearest loos with the best reviews!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -32,9 +32,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?beans,coffee,bathroom"
         },
-        {
+        { //3
           name: "Unicorn Finder",
-          category_name: "social networking",
+          category_id: 11,
           description: "Here there be unicorns!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -43,9 +43,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?horse,unicorn,fantasy"
         },
-        {
+        { //4
           name: "RePlate",
-          category_name: "food & drink",
+          category_id: 8,
           description:
             "The only app to bridge the gap from rubbish bins to rumbly tummies! RePlate takes the unused and ugly foods from restaurants and stores before it gets tossed, and gives it to hungry people!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -55,9 +55,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?food,garbage,earth"
         },
-        {
+        { //5
           name: "Prisoner Skills",
-          category_name: "education",
+          category_id: 3,
           description:
             "Help prepare the incarcerated for life on the outside, use their skillsets to improve their communities, plus earn a sustainable wage to start off on the right foot. Less reoffenders = less wasted tax dollars. No more for-profit prisons.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -67,9 +67,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?prison,factory,inmate"
         },
-        {
+        { //6
           name: "FancyPlants",
-          category_name: "games",
+          category_id: 4,
           description:
             "Poky-man go for flowers! Capture photos of flowers on all your travels, extra points for rare varieties and colors.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -79,9 +79,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?flowers,wildflowers"
         },
-        {
+        { //7
           name: "Rangr",
-          category_name: "travel",
+          category_id: 17,
           description:
             "Uses gps to help matches mountain skylines and name the peaks as far as the eye can see!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -91,9 +91,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?mountain,peak,forest"
         },
-        {
+        { //8
           name: "Mommy",
-          category_name: "health & fitness",
+          category_id: 7,
           description:
             "Mother doesn't live here anymore, but Mommy still knows best! The app that runs your life, because you. can't. even.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -103,9 +103,9 @@ exports.seed = function(knex, Promise) {
           submitted_at: "July 18th at 1:00 PM",
           display_image: "https://source.unsplash.com/1600x900/?woman,mom,lady"
         },
-        {
+        { //9
           name: "Firefly",
-          category_name: "education",
+          category_id: 3,
           description: "Teach the babies to code!!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -114,9 +114,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?babies,kids,firefly"
         },
-        {
+        { //10
           name: "Empowered Conversations",
-          category_name: "medical",
+          category_id: 6,
           description:
             "Sometimes the truth is hard. We'll get that ball rolling, you can't take it back but you wont regret it.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -126,9 +126,9 @@ exports.seed = function(knex, Promise) {
           submitted_at: "July 18th at 1:00 PM",
           display_image: "https://source.unsplash.com/1600x900/?scream,talk,hug"
         },
-        {
+        { //11
           name: "Sports Ball",
-          category_name: "sports",
+          category_id: 16,
           description:
             "Make sports fun for people who aren't into sports! stadium food, athlete life drama and outfits",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -139,9 +139,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?football,soccer,basketball"
         },
-        {
+        { //12
           name: "Text Adventure",
-          category_name: "games",
+          category_id: 4,
           description: "Save the world one text based decision at a time",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -150,9 +150,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?video-games,games,gaming"
         },
-        {
+        { //13
           name: "Tamagotchi 2",
-          category_name: "games",
+          category_id: 4,
           description:
             "Do you remember how much you loved your Tamagotchi as a child?  Now Tamagotchi is out of the pocket.  Control your 3D printed pet with an easy to use mobile app",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -162,9 +162,9 @@ exports.seed = function(knex, Promise) {
           submitted_at: "July 18th at 1:00 PM",
           display_image: "https://source.unsplash.com/1600x900/?pets,games,toys"
         },
-        {
+        { //14
           name: "Tabless Thursday",
-          category_name: "Entertainment",
+          category_id: 2,
           description:
             "An app that helps with organizing tabs and keeping your workspace productive.",
           frontend_url: "https://tabless-thursday-fe.netlify.com",
@@ -173,9 +173,9 @@ exports.seed = function(knex, Promise) {
           submitted_at: "August 1st at 1:00 PM",
           display_image: "https://gyazo.com/8b1384b476d107448cddac75aa9bf233"
         },
-        {
+        { //15
           name: "Nifty Market",
-          category_name: "Games",
+          category_id: 4,
           description:
             "A marketplace where gamers can safely buy and sell in-game items for money.",
           frontend_url: "https://github.com/nifty-markets-build/nifty-front",
@@ -184,9 +184,9 @@ exports.seed = function(knex, Promise) {
           submitted_at: "August 1st at 1:00 PM",
           display_image: "https://gyazo.com/d2dc6a0d2abed761c4d24735aed7b632"
         },
-        {
+        { //16
           name: "Navaid Photometric Testr",
-          category_name: "business",
+          category_id: 1,
           description:
             "the second largest airport in the world relies on an old HP tablet and tech that barely works sometimes.. ",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -196,9 +196,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?airport,airplane,airfield"
         },
-        {
+        { //17
           name: "Dying To Know",
-          category_name: "health & fitness",
+          category_id: 7,
           description:
             "we're all dying. calculate your lifestyle choices and find out the comprehensive details of how you're most likely to go",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -208,9 +208,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?germs,elderly,skydive,fire"
         },
-        {
+        { //18
           name: "BB",
-          category_name: "education",
+          category_id: 3,
           description:
             "app for babies! colors, sounds, buttons, its all a baby needs. stop buying all that cute new plastic junk.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -220,9 +220,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?baby,newborn,infant"
         },
-        {
+        { //19
           name: "Mimi & Poppy",
-          category_name: "Social Networking",
+          category_id: 11,
           description:
             "respect your elders! but only the good ones. don't have your own? borrow ours!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -232,9 +232,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?grandmother,grandfather,elderly"
         },
-        {
+        { //20
           name: "Grinder",
-          category_name: "food & drink",
+          category_id: 8,
           description:
             "Bacon tenderloin ham jowel ribeye striploin flank flatiron t-bone baby back drumstick brisket shortrib ",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -244,9 +244,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?meat,butcher,steak"
         },
-        {
+        { //21
           name: "iBrthday",
-          category_name: "shopping",
+          category_id: 12,
           description:
             "host, organize, invite, decorate, cater, rent, register - all with the swipe of a finger!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -256,9 +256,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?birthday,cake,wine"
         },
-        {
+        { //22
           name: "Crows",
-          category_name: "music",
+          category_id: 5,
           description: "CAW. CAW. CAW. caw caw caw caw caw caw caw. CAW. ",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -267,9 +267,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?blackbird,crow,raven"
         },
-        {
+        { //23
           name: "McFry",
-          category_name: "navigation",
+          category_id: 15,
           description: "never eat oversalted soggy fries again",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -278,9 +278,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?fries,frenchfry,fry"
         },
-        {
+        { //24
           name: "Pants On Fire",
-          category_name: "finance",
+          category_id: 9,
           description:
             "stop lying to your parents, stop lying to your school, stop lying to yourself.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -290,9 +290,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?flame,spiderweb,cave"
         },
-        {
+        { //25
           name: "Run with Scissors",
-          category_name: "games",
+          category_id: 4,
           description: "its fun! and other great advice.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -302,9 +302,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?scissors,forest,pool"
         },
-        {
+        { //26
           name: "Good Behavior",
-          category_name: "news",
+          category_id: 14,
           description:
             "Hide your kids. Realtime feed of incarcerated ped*ph*les/rap*sts release date, address, description.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -315,9 +315,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?house,neighborhood,suburb"
         },
-        {
+        { //27
           name: "Do Go",
-          category_name: "travel",
+          category_id: 17,
           description: "chasing waterfalls. explore, rate, review",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -326,9 +326,9 @@ exports.seed = function(knex, Promise) {
           display_image:
             "https://source.unsplash.com/1600x900/?waterfall,river,glacier"
         },
-        {
+        { //28
           name: "Doggo",
-          category_name: "books",
+          category_id: 10,
           description:
             "books for dogs? books is a weird category. we do need a miscelaneous category though",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
@@ -338,9 +338,9 @@ exports.seed = function(knex, Promise) {
           submitted_at: "July 16th at 1:00 PM",
           display_image: "https://source.unsplash.com/1600x900/?puppy,dog,wolf"
         },
-        {
+        { //29
           name: "PlanIt Change",
-          category_name: "weather",
+          category_id: 18,
           description: "because we have less than ten years.",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
