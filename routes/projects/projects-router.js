@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
-      project.category = await Projects.getProjectCategory(project.id);
+      project.category = await Projects.getProjectCategory(project.category_id);
     }
     res.status(200).json({
       projects: projectsPerPage.rows || projectsPerPage,

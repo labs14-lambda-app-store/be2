@@ -57,11 +57,8 @@ function getProjectTags(id) {
 
 //get category for a project
 function getProjectCategory(id) {
-  return db("projects as p")
-    .join("project_categories as pc", "pc.project_id", "p.id")
-    .join("categories as c", "c.id", "ct.category_id")
-    .select("c.*")
-    .where("p.id", id);
+  return db("categories as c")
+    .where("c.id", id);
 }
 
 
