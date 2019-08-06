@@ -1,7 +1,5 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.hasTable("projects_tags", exists => {
-    if (!exists) {
-      knex.schema.createTable("projects_tags", table => {
+  return knex.schema.createTable("projects_tags", table => {
         table.increments();
         table
           .integer("project_id")
@@ -20,8 +18,6 @@ exports.up = function(knex, Promise) {
           .onDelete("CASCADE")
           .onUpdate("CASCADE");
       });
-    }
-  });
 };
 
 exports.down = function(knex, Promise) {
