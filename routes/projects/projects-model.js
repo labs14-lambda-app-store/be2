@@ -23,10 +23,9 @@ function getProjects(searchParameter) {
 }
 
 //sets pagination while getting set amount of projects at a time.  Currently 12 projects per page.
-function getProjectsPerPage(page, searchParameter) {
+function getProjectsPerPage(searchParameter, page) {
   let limit = 12;
   let offset = (page - 1) * limit;
-  console.log(searchParameter);
   if (searchParameter) {
     return db.raw(
       `SELECT * FROM projects WHERE UPPER(name) LIKE UPPER('%${searchParameter}%') or UPPER(description) LIKE UPPER('%${searchParameter}%') LIMIT ${limit} OFFSET ${offset}`

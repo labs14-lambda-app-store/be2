@@ -7,21 +7,23 @@ const environment = process.env.DB_ENV || "development";
 
 //endpoint to get all projects
 router.get("/", async (req, res) => {
-  console.log("req.query : ", req.query);
   let searchParameter = req.query.search;
   let page = parseInt(req.query.page) || 1;
-  console.log(searchParameter);
   try {
     const projects = await Projects.getProjects(searchParameter);
-    const projectsPerPage = await Projects.getProjectsPerPage(
-      page,
-      searchParameter
+    let projectsPerPage = await Projects.getProjectsPerPage(
+      searchParameter,
+      page
     );
+    if (searchParameter) {
+      projectsPerPage = projectsPerPage.rows;
+    }
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
       project.category = await Projects.getProjectCategory(project.category_id);
     }
+
     res.status(200).json({
       projects: projectsPerPage.rows || projectsPerPage,
       projectLength: projects.length || projects.rowCount,
