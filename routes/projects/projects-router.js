@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const Projects = require("./projects-model");
 
+const environment = process.env.DB_ENV || "development";
+
 //endpoint to get all projects
 router.get("/", async (req, res) => {
   console.log("req.query : ", req.query);
@@ -15,10 +17,10 @@ router.get("/", async (req, res) => {
       page,
       searchParameter
     );
-    console.log(projects);
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
+      project.category = await Projects.getProjectCategory(project.category_id);
     }
     res.status(200).json({
       projects: projectsPerPage.rows || projectsPerPage,
@@ -26,8 +28,13 @@ router.get("/", async (req, res) => {
       message: "Did somebody order some projects"
     });
   } catch (error) {
-    console.log("Getting projects error: ", error);
-    res.status(500).json({ message: "error getting projects ", error });
+    //only logs the real error if we are not in production
+    if (environment === "production") {
+      res.status(500).json({ message: "error getting projects " });
+    } else {
+      console.log("Getting projects error:", error);
+      res.status(500).json({ message: "error getting projects ", error });
+    }
   }
 });
 
@@ -44,8 +51,12 @@ router.get("/:id", async (req, res) => {
         .json({ message: "The project with the specified ID does not exist." });
     }
   } catch (error) {
-    console.log("Get project by ID error: ", error);
-    res.status(500).json({ message: "Error getting that project.", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "error getting that project " });
+    } else {
+      console.log("Get project by ID error: ", error);
+      res.status(500).json({ message: "Error getting that project.", error });
+    }
   }
 });
 
@@ -55,8 +66,12 @@ router.post("/", async (req, res) => {
     const project = await Projects.addProject(req.body);
     res.status(201).json({ message: "Project successfully created." });
   } catch (error) {
-    console.log("Create project error: ", error);
-    res.status(500).json({ message: "Error creating that project." });
+    if (environment === "production") {
+      res.status(500).json({ message: "error creating projects " });
+    } else {
+      console.log("Create project error: ", error);
+      res.status(500).json({ message: "Error creating that project." });
+    }
   }
 });
 
@@ -73,8 +88,12 @@ router.put("/:id", async (req, res) => {
         .json({ message: "The project with the specified ID does not exist." });
     }
   } catch (error) {
-    console.log("Update project error: ", error);
-    res.status(500).json({ message: "Error updating the project.", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "error updating projects " });
+    } else {
+      console.log("Update project error: ", error);
+      res.status(500).json({ message: "Error updating the project.", error });
+    }
   }
 });
 
@@ -90,8 +109,12 @@ router.delete("/:id", async (req, res) => {
         .json({ message: "The project with the specified ID does not exist." });
     }
   } catch (error) {
-    console.log("Delete project error : ", error);
-    res.status(500).json({ message: "Error deleting that project", error });
+    if (environment === "production") {
+      res.status(500).json({ message: "error deleting that project " });
+    } else {
+      console.log("Delete project error : ", error);
+      res.status(500).json({ message: "Error deleting that project", error });
+    }
   }
 });
 
