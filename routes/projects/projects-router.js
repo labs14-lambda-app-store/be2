@@ -3,14 +3,14 @@ const express = require("express");
 const router = express.Router();
 const Projects = require("./projects-model");
 
-const environment = process.env.DB_ENV || "development";
+const environment = process.env.DB_ENV;
 
 //endpoint to get all projects
 router.get("/", async (req, res) => {
   console.log("req.query : ", req.query);
   let searchParameter = req.query.search;
   let page = parseInt(req.query.page) || 1;
-  console.log(searchParameter);
+  console.log("searchParameter", searchParameter);
   try {
     const projects = await Projects.getProjects(searchParameter);
     const projectsPerPage = await Projects.getProjectsPerPage(
@@ -21,6 +21,7 @@ router.get("/", async (req, res) => {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
       project.category = await Projects.getProjectCategory(project.category_id);
+      project.comments = await Projects.getProjectComments(project.id);
     }
     res.status(200).json({
       projects: projectsPerPage.rows || projectsPerPage,
@@ -33,7 +34,9 @@ router.get("/", async (req, res) => {
       res.status(500).json({ message: "error getting projects " });
     } else {
       console.log("Getting projects error:", error);
-      res.status(500).json({ message: "error getting projects ", error });
+      res
+        .status(500)
+        .json({ message: "error getting projects ", error, environment });
     }
   }
 });
