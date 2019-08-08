@@ -24,7 +24,6 @@ describe("Users", () => {
       const user = {
         username: "Username",
         email: "Email",
-        password: "Password",
         sub_id: 1,
         first_name: "First",
         last_name: "Last",
@@ -39,7 +38,6 @@ describe("Users", () => {
       await addUser({
         username: "Username1",
         email: "Email1",
-        password: "Password",
         sub_id: 1,
         first_name: "First",
         last_name: "Last",
@@ -48,15 +46,14 @@ describe("Users", () => {
       await addUser({
         username: "Username2",
         email: "Email2",
-        password: "Password",
         sub_id: 1,
         first_name: "First",
         last_name: "Last",
         pictureURL: "string"
       });
-      const users = await db('users')
+      const users = await db("users");
 
-      expect(users).toHaveLength(2)
+      expect(users).toHaveLength(2);
     });
   });
 });
