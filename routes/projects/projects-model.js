@@ -6,6 +6,7 @@ module.exports = {
   getProjectById,
   getProjectTags,
   getProjectCategory,
+  getProjectComments,
   addProject,
   updateProject,
   deleteProject
@@ -54,13 +55,15 @@ function getProjectTags(id) {
     .where("p.id", id);
 }
 
-
 //get category for a project
 function getProjectCategory(id) {
-  return db("categories as c")
-    .where("c.id", id);
+  return db("categories as c").where("c.id", id);
 }
 
+//get comments for a project
+function getProjectComments(id) {
+  return db("comments as c").where("c.id", id);
+}
 
 //add new project
 function addProject(project) {

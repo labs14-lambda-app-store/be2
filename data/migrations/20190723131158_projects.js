@@ -1,5 +1,7 @@
-exports.up = function(knex, Promise) {
-  return knex.schema.createTable("projects", table => {
+exports.up = async function(knex, Promise) {
+  return await knex.schema.hasTable("projects").then(exists => {
+    if (!exists) {
+      return knex.schema.createTable("projects", table => {
         table.increments();
         table
           .string("name")
@@ -28,6 +30,8 @@ exports.up = function(knex, Promise) {
           .onDelete("CASCADE")
           .onUpdate("CASCADE");
       });
+    }
+  });
 };
 
 exports.down = function(knex, Promise) {
@@ -35,9 +39,3 @@ exports.down = function(knex, Promise) {
 };
 
 //Fix for potential future bug involving upgrading migrations
-
-// knex.schema.hasTable("projects", exists => {
-//   if (!exists) {
-
-//   }
-// });

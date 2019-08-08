@@ -1,5 +1,7 @@
-exports.up = function(knex, Promise) {
-  return knex.schema.createTable("users", table => {
+exports.up = async function(knex, Promise) {
+  return await knex.schema.hasTable("users").then(exists => {
+    if (!exists) {
+      return knex.schema.createTable("users", table => {
         table.increments();
         table
           .string("username")
@@ -9,12 +11,13 @@ exports.up = function(knex, Promise) {
           .string("email")
           .notNullable()
           .unique();
-        table.string("password").notNullable();
         table.integer("sub_id").notNullable();
         table.string("first_name").notNullable();
         table.string("last_name").notNullable();
         table.string("pictureURL");
       });
+    }
+  });
 };
 
 exports.down = function(knex, Promise) {
@@ -22,9 +25,3 @@ exports.down = function(knex, Promise) {
 };
 
 //Fix for potential future bug involving upgrading migrations
-
-// knex.schema.hasTable("users", exists => {
-//   if (!exists) {
-
-//   }
-// });

@@ -8,7 +8,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "JeffLapp",
           email: "jefflapp@email.com",
-          password: "password",
           sub_id: 1,
           first_name: "Jeff",
           last_name: "Lapp",
@@ -17,7 +16,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "DavidClavijo",
           email: "davidclavijo@email.com",
-          password: "password",
           sub_id: 2,
           first_name: "David",
           last_name: "Clavijo",
@@ -26,7 +24,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "KaylaCrow",
           email: "kaylacrow@email.com",
-          password: "password",
           sub_id: 3,
           first_name: "Kayla",
           last_name: "Crow",
@@ -35,7 +32,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "JoshDisney",
           email: "joshdisney@email.com",
-          password: "password",
           sub_id: 4,
           first_name: "Josh",
           last_name: "Disney",
@@ -44,7 +40,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "VictorNguyen",
           email: "victornguyen@email.com",
-          password: "password",
           sub_id: 5,
           first_name: "Victor",
           last_name: "Nguyen",
@@ -53,7 +48,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "ChrisPetito",
           email: "chrispetito@email.com",
-          password: "password",
           sub_id: 6,
           first_name: "Chris",
           last_name: "Petito",
@@ -62,7 +56,6 @@ exports.seed = function(knex, Promise) {
         {
           username: "JamesStarks",
           email: "jamesstarks@email.com",
-          password: "password",
           sub_id: 7,
           first_name: "James",
           last_name: "Starks",
