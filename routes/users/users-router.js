@@ -36,8 +36,9 @@ router.get("/:id", async (req, res) => {
 //endpoint to create a new user
 router.post("/", async (req, res) => {
   try {
-    const user = await Users.addUser(req.body);
-    res.status(201).json({ message: "User successfully created." });
+    const newUser = await Users.addUser(req.body);
+    console.log({ newUser });
+    res.status(201).json({ message: "User successfully created.", newUser });
   } catch (error) {
     console.log("Create user error : ", error);
     res.status(500).json({ message: "Error creating that user.", error });

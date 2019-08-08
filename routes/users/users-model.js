@@ -22,9 +22,27 @@ function getUserById(id) {
 
 // post for adding a user
 function addUser(user) {
+  const determineRole = user => {
+    let role = "";
+    let email = user.email;
+    let result = email.split("@");
+    switch (result[1]) {
+      case "lambdaschool.com":
+        role = "admin";
+        break;
+      default:
+        role = "student";
+    }
+    return role;
+  };
+  const finalUser = {
+    ...user,
+    role: determineRole(user)
+  };
   return db("users")
-    .insert(user)
-    .then(ids => ({ id: ids[0] }));
+    .insert(finalUser)
+    .then(ids => ({ id: ids[0] }))
+    .then(user => finalUser);
 }
 
 // update the user
