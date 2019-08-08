@@ -7,15 +7,15 @@ const environment = process.env.DB_ENV;
 
 //endpoint to get all projects
 router.get("/", async (req, res) => {
-  console.log("req.query : ", req.query);
   let searchParameter = req.query.search;
   let page = parseInt(req.query.page) || 1;
-  console.log("searchParameter", searchParameter);
+  let filterApproved = req.query.filterApproved;
   try {
     const projects = await Projects.getProjects(searchParameter);
     const projectsPerPage = await Projects.getProjectsPerPage(
       page,
-      searchParameter
+      searchParameter,
+      filterApproved
     );
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
