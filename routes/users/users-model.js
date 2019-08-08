@@ -2,7 +2,7 @@ const db = require("../../data/dbConfig.js");
 
 module.exports = {
   getUsers,
-  getUserById,
+  getUserBySubId,
   addUser,
   updateUser,
   deleteUser
@@ -13,10 +13,10 @@ function getUsers() {
   return db("users");
 }
 
-// get user by id
-function getUserById(id) {
+// get user by Sub_id
+function getUserBySubId(id) {
   return db("users")
-    .where({ id })
+    .where("sub_id", id)
     .first();
 }
 
