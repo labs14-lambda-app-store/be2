@@ -8,7 +8,7 @@ module.exports = {
 
 //get all categories
 function getCategories() {
-  return db("categories");
+  return db("categories").orderBy("category_name");
 }
 
 //post for adding a category
