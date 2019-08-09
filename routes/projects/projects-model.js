@@ -13,17 +13,6 @@ module.exports = {
   deleteProject
 };
 
-//approvedFilter will take in either true or false
-// if true: query DB for all projects where is_approved === true
-// if false: query DB for all projects where is_approved === false
-// need to make sure project length isn't screwed in the process
-// might need to take projectLength state out of Redux or separate into pendingProjectLength and
-//get all projects
-
-//WE NEED THIS
-//total count of all is_approved = true projects with optional search param
-//total count of all is_approved = false projects with optional search param
-
 function getProjects(searchParameter, approvedFilter) {
   if (searchParameter) {
     return db("projects").whereRaw(
