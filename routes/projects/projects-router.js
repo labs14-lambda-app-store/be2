@@ -5,33 +5,45 @@ const Projects = require("./projects-model");
 
 const environment = process.env.DB_ENV;
 
-//endpoint to get all projects
+//gets all projects that match query strings given for searching and pagination
 router.get("/", async (req, res) => {
-  console.log("req.query : ", req.query);
-  let searchParameter = req.query.search;
-  let page = parseInt(req.query.page) || 1;
-  console.log("searchParameter", searchParameter);
+  const searchParameter = req.query.search;
+  const filter = req.query.approved;
+  const page = req.query.page;
+
   try {
-    const projects = await Projects.getProjects(searchParameter);
+    //gets count of all projects requested - necessary for FE pagination
+    const totalFilterProjectsCount = await Projects.getProjectsCount(
+      searchParameter,
+      filter
+    );
+    //gets actual project data requested, with pagination
     const projectsPerPage = await Projects.getProjectsPerPage(
       page,
-      searchParameter
+      searchParameter,
+      filter
     );
+
+    //loops through projects and adds the proper values based off foreign keys to related array on project
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
       project.tags = await Projects.getProjectTags(project.id);
       project.category = await Projects.getProjectCategory(project.category_id);
       project.comments = await Projects.getProjectComments(project.id);
     }
+
     res.status(200).json({
-      projects: projectsPerPage.rows || projectsPerPage,
-      projectLength: projects.length || projects.rowCount,
-      message: "Did somebody order some projects"
+      //returns the count of the filtered and searching projects from line 16
+      length: parseInt(totalFilterProjectsCount[0].count),
+      projects: projectsPerPage
     });
   } catch (error) {
     //only logs the real error if we are not in production
     if (environment === "production") {
-      res.status(500).json({ message: "error getting projects " });
+      res.status(500).json({
+        message:
+          "Error getting projects: please include approved boolean and/or search string in query "
+      });
     } else {
       console.log("Getting projects error:", error);
       res
