@@ -78,7 +78,7 @@ function getProjectCategory(id) {
 
 //get comments for a project
 function getProjectComments(id) {
-  return db("comments as c").where("c.id", id);
+  return db("comments as c").where("c.project_id", id);
 }
 
 //add new project
