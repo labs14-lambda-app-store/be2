@@ -1,7 +1,7 @@
 const db = require("../../data/dbConfig.js");
 
 module.exports = {
-  getProjects,
+  getAllProjects,
   getProjectsPerPage,
   getProjectById,
   getProjectTags,
@@ -13,17 +13,12 @@ module.exports = {
   deleteProject
 };
 
-function getProjects(searchParameter, approvedFilter) {
-  if (searchParameter) {
-    return db("projects").whereRaw(
-      `UPPER(name) LIKE UPPER('%${searchParameter}%') or UPPER(description) LIKE UPPER('%${searchParameter}%')`
-    );
-  } else {
-    return db("projects");
-  }
+//gets all projects in DB with no filters or pagination
+function getAllProjects(searchParameter, approvedFilter) {
+  return db("projects");
 }
 
-//returns the count of all projecs with the searchParameter or approvedFilter
+//returns the count of all projects found in DB that match the searchParameter string or approvedFilter boolean
 function getProjectsCount(searchParameter, approvedFilter) {
   let filter = approvedFilter ? `AND is_approved = ${approvedFilter}` : "";
   if (approvedFilter && !searchParameter) {
@@ -40,6 +35,7 @@ function getProjectsCount(searchParameter, approvedFilter) {
 }
 
 //sets pagination while getting set amount of projects at a time.  Currently 12 projects per page.
+//use approvedFilter parameter to change the is_approved DB query
 function getProjectsPerPage(page, searchParameter, approvedFilter) {
   let filter = approvedFilter ? `AND is_approved = ${approvedFilter}` : "";
   let limit = 12;
