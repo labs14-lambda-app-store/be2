@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// endpoint to get user by id
+// endpoint to get user by id     <----------- currently broken
 router.get("/:id", async (req, res) => {
   try {
     const user = await Users.getUserById(req.params.id);
@@ -36,8 +36,13 @@ router.get("/:id", async (req, res) => {
 //endpoint to create a new user
 router.post("/", async (req, res) => {
   try {
-    const user = await Users.addUser(req.body);
-    res.status(201).json({ message: "User successfully created." });
+    let user = await Users.getUserBySubId(req.body.sub_id);
+    if (!user) {
+      user = await Users.addUser(req.body);
+      res.status(201).json({ message: "User successfully registered.", user });
+    } else {
+      res.status(201).json({ message: "User successfully logged in.", user });
+    }
   } catch (error) {
     console.log("Create user error : ", error);
     res.status(500).json({ message: "Error creating that user.", error });

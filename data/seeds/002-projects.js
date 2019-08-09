@@ -7,7 +7,8 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex("projects").insert([
-        { //1
+        {
+          //1
           name: "Lambda App Store",
           category_id: 3,
           description:
@@ -17,9 +18,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "www.lambdaappstore.org",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?technology,computer,typing"
+            "https://source.unsplash.com/1600x900/?technology,computer,typing",
+          is_approved: true
         },
-        { //2
+        {
+          //2
           name: "Crap Map App",
           category_id: 6,
           description:
@@ -30,9 +33,11 @@ exports.seed = function(knex, Promise) {
             "https://thoughtcatalog.com/january-nelson/2018/06/poop-jokes/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?beans,coffee,bathroom"
+            "https://source.unsplash.com/1600x900/?beans,coffee,bathroom",
+          is_approved: false
         },
-        { //3
+        {
+          //3
           name: "Unicorn Finder",
           category_id: 11,
           description: "Here there be unicorns!",
@@ -41,9 +46,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.youtube.com/watch?v=CsGYh8AacgY",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?horse,unicorn,fantasy"
+            "https://source.unsplash.com/1600x900/?horse,unicorn,fantasy",
+          is_approved: true
         },
-        { //4
+        {
+          //4
           name: "RePlate",
           category_id: 8,
           description:
@@ -53,9 +60,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.stvincentdepaul.net/programs",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?food,garbage,earth"
+            "https://source.unsplash.com/1600x900/?food,garbage,earth",
+          is_approved: true
         },
-        { //5
+        {
+          //5
           name: "Prisoner Skills",
           category_id: 3,
           description:
@@ -65,9 +74,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.netflix.com/title/70242311",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?prison,factory,inmate"
+            "https://source.unsplash.com/1600x900/?prison,factory,inmate",
+          is_approved: false
         },
-        { //6
+        {
+          //6
           name: "FancyPlants",
           category_id: 4,
           description:
@@ -77,9 +88,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://en.wikipedia.org/wiki/Animal_Crossing",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?flowers,wildflowers"
+            "https://source.unsplash.com/1600x900/?flowers,wildflowers",
+          is_approved: true
         },
-        { //7
+        {
+          //7
           name: "Rangr",
           category_id: 17,
           description:
@@ -89,9 +102,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.bobross.com/Default.asp",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?mountain,peak,forest"
+            "https://source.unsplash.com/1600x900/?mountain,peak,forest",
+          is_approved: false
         },
-        { //8
+        {
+          //8
           name: "Mommy",
           category_id: 7,
           description:
@@ -101,9 +116,11 @@ exports.seed = function(knex, Promise) {
           hosted_url:
             "https://www.amazon.com/My-Way-Highway-Micromanagement-Survival/dp/1576752968",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "https://source.unsplash.com/1600x900/?woman,mom,lady"
+          display_image: "https://source.unsplash.com/1600x900/?woman,mom,lady",
+          is_approved: true
         },
-        { //9
+        {
+          //9
           name: "Firefly",
           category_id: 3,
           description: "Teach the babies to code!!",
@@ -112,9 +129,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://codecombat.com/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?babies,kids,firefly"
+            "https://source.unsplash.com/1600x900/?babies,kids,firefly",
+          is_approved: false
         },
-        { //10
+        {
+          //10
           name: "Empowered Conversations",
           category_id: 6,
           description:
@@ -124,9 +143,12 @@ exports.seed = function(knex, Promise) {
           hosted_url:
             "https://www.psychologytoday.com/us/blog/freudian-sip/201102/how-find-the-best-therapist-you",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "https://source.unsplash.com/1600x900/?scream,talk,hug"
+          display_image:
+            "https://source.unsplash.com/1600x900/?scream,talk,hug",
+          is_approved: true
         },
-        { //11
+        {
+          //11
           name: "Sports Ball",
           category_id: 16,
           description:
@@ -137,9 +159,11 @@ exports.seed = function(knex, Promise) {
             "https://www.urbandictionary.com/define.php?term=sportsball",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?football,soccer,basketball"
+            "https://source.unsplash.com/1600x900/?football,soccer,basketball",
+          is_approved: false
         },
-        { //12
+        {
+          //12
           name: "Text Adventure",
           category_id: 4,
           description: "Save the world one text based decision at a time",
@@ -148,9 +172,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.makeuseof.com/tag/browser-text-based-games/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?video-games,games,gaming"
+            "https://source.unsplash.com/1600x900/?video-games,games,gaming",
+          is_approved: true
         },
-        { //13
+        {
+          //13
           name: "Tamagotchi 2",
           category_id: 4,
           description:
@@ -160,9 +186,12 @@ exports.seed = function(knex, Promise) {
           hosted_url:
             "https://www.amazon.com/Kids-Electronics-Tamagotchi-Toys-Games/s?rh=n%3A166164011%2Cp_lbr_characters_browse-bin%3ATamagotchi",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "https://source.unsplash.com/1600x900/?pets,games,toys"
+          display_image:
+            "https://source.unsplash.com/1600x900/?pets,games,toys",
+          is_approved: false
         },
-        { //14
+        {
+          //14
           name: "Tabless Thursday",
           category_id: 2,
           description:
@@ -171,9 +200,11 @@ exports.seed = function(knex, Promise) {
           backend_url: "https://tabless-thursday-be.herokuapp.com",
           hosted_url: "https://sad-wright-374d2c.netlify.com/",
           submitted_at: "August 1st at 1:00 PM",
-          display_image: "https://gyazo.com/8b1384b476d107448cddac75aa9bf233"
+          display_image: "https://gyazo.com/8b1384b476d107448cddac75aa9bf233",
+          is_approved: true
         },
-        { //15
+        {
+          //15
           name: "Nifty Market",
           category_id: 4,
           description:
@@ -182,9 +213,11 @@ exports.seed = function(knex, Promise) {
           backend_url: "https://github.com/nifty-markets-build/nifty-backend",
           hosted_url: "https://niftymarkets.netlify.com/",
           submitted_at: "August 1st at 1:00 PM",
-          display_image: "https://gyazo.com/d2dc6a0d2abed761c4d24735aed7b632"
+          display_image: "https://gyazo.com/d2dc6a0d2abed761c4d24735aed7b632",
+          is_approved: true
         },
-        { //16
+        {
+          //16
           name: "Navaid Photometric Testr",
           category_id: 1,
           description:
@@ -194,9 +227,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.flydenver.com/",
           submitted_at: "July 27th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?airport,airplane,airfield"
+            "https://source.unsplash.com/1600x900/?airport,airplane,airfield",
+          is_approved: false
         },
-        { //17
+        {
+          //17
           name: "Dying To Know",
           category_id: 7,
           description:
@@ -206,9 +241,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://en.wikipedia.org/wiki/Assisted_suicide",
           submitted_at: "July 28th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?germs,elderly,skydive,fire"
+            "https://source.unsplash.com/1600x900/?germs,elderly,skydive,fire",
+          is_approved: true
         },
-        { //18
+        {
+          //18
           name: "BB",
           category_id: 3,
           description:
@@ -218,9 +255,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.etsy.com/market/fancy_baby_dress",
           submitted_at: "July 20th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?baby,newborn,infant"
+            "https://source.unsplash.com/1600x900/?baby,newborn,infant",
+          is_approved: true
         },
-        { //19
+        {
+          //19
           name: "Mimi & Poppy",
           category_id: 11,
           description:
@@ -230,9 +269,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://seniorpath.com/common-assisted-living-issues/",
           submitted_at: "July 14th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?grandmother,grandfather,elderly"
+            "https://source.unsplash.com/1600x900/?grandmother,grandfather,elderly",
+          is_approved: false
         },
-        { //20
+        {
+          //20
           name: "Grinder",
           category_id: 8,
           description:
@@ -242,9 +283,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://mishkahenner.com/Feedlots",
           submitted_at: "July 2th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?meat,butcher,steak"
+            "https://source.unsplash.com/1600x900/?meat,butcher,steak",
+          is_approved: true
         },
-        { //21
+        {
+          //21
           name: "iBrthday",
           category_id: 12,
           description:
@@ -254,9 +297,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.hallmark.com/birthday/",
           submitted_at: "July 3th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?birthday,cake,wine"
+            "https://source.unsplash.com/1600x900/?birthday,cake,wine",
+          is_approved: false
         },
-        { //22
+        {
+          //22
           name: "Crows",
           category_id: 5,
           description: "CAW. CAW. CAW. caw caw caw caw caw caw caw. CAW. ",
@@ -265,9 +310,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://greenkansas.wixsite.com/theappleseedcast/merch",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?blackbird,crow,raven"
+            "https://source.unsplash.com/1600x900/?blackbird,crow,raven",
+          is_approved: true
         },
-        { //23
+        {
+          //23
           name: "McFry",
           category_id: 15,
           description: "never eat oversalted soggy fries again",
@@ -276,9 +323,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://frenchfriesmachine.com/blog.html",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?fries,frenchfry,fry"
+            "https://source.unsplash.com/1600x900/?fries,frenchfry,fry",
+          is_approved: false
         },
-        { //24
+        {
+          //24
           name: "Pants On Fire",
           category_id: 9,
           description:
@@ -288,9 +337,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.wikihow.com/Stop-Lying",
           submitted_at: "July 31th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?flame,spiderweb,cave"
+            "https://source.unsplash.com/1600x900/?flame,spiderweb,cave",
+          is_approved: true
         },
-        { //25
+        {
+          //25
           name: "Run with Scissors",
           category_id: 4,
           description: "its fun! and other great advice.",
@@ -300,9 +351,11 @@ exports.seed = function(knex, Promise) {
             "https://runsignup.com/Race/CO/Brighton/RunsWithScissorsRaces",
           submitted_at: "July 30th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?scissors,forest,pool"
+            "https://source.unsplash.com/1600x900/?scissors,forest,pool",
+          is_approved: false
         },
-        { //26
+        {
+          //26
           name: "Good Behavior",
           category_id: 14,
           description:
@@ -313,9 +366,11 @@ exports.seed = function(knex, Promise) {
             "https://www.themarshallproject.org/2019/04/03/when-violent-offenders-commit-nonviolent-crimes",
           submitted_at: "July 27th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?house,neighborhood,suburb"
+            "https://source.unsplash.com/1600x900/?house,neighborhood,suburb",
+          is_approved: true
         },
-        { //27
+        {
+          //27
           name: "Do Go",
           category_id: 17,
           description: "chasing waterfalls. explore, rate, review",
@@ -324,9 +379,11 @@ exports.seed = function(knex, Promise) {
           hosted_url: "http://www.angelfire.com/ca4/illimattic/fanclub.html",
           submitted_at: "July 24th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?waterfall,river,glacier"
+            "https://source.unsplash.com/1600x900/?waterfall,river,glacier",
+          is_approved: false
         },
-        { //28
+        {
+          //28
           name: "Doggo",
           category_id: 10,
           description:
@@ -336,9 +393,11 @@ exports.seed = function(knex, Promise) {
           hosted_url:
             "https://thebark.com/content/reading-dogs-help-children-learn",
           submitted_at: "July 16th at 1:00 PM",
-          display_image: "https://source.unsplash.com/1600x900/?puppy,dog,wolf"
+          display_image: "https://source.unsplash.com/1600x900/?puppy,dog,wolf",
+          is_approved: true
         },
-        { //29
+        {
+          //29
           name: "PlanIt Change",
           category_id: 18,
           description: "because we have less than ten years.",
@@ -347,7 +406,8 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://twitter.com/planitchange10?lang=en",
           submitted_at: "July 1th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/1600x900/?earth,ocean,glacier"
+            "https://source.unsplash.com/1600x900/?earth,ocean,glacier",
+          is_approved: false
         }
       ]);
     });
