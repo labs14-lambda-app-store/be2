@@ -9,13 +9,12 @@ const environment = process.env.DB_ENV;
 router.get("/", async (req, res) => {
   let searchParameter = req.query.search;
   let page = parseInt(req.query.page) || 1;
-  let filterApproved = req.query.filterApproved;
+
   try {
     const projects = await Projects.getProjects(searchParameter);
     const projectsPerPage = await Projects.getProjectsPerPage(
       page,
-      searchParameter,
-      filterApproved
+      searchParameter
     );
     for (i = 0; i < projectsPerPage.length; i++) {
       const project = projectsPerPage[i];
