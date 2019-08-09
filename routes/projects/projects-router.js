@@ -24,8 +24,8 @@ router.get("/", async (req, res) => {
       project.comments = await Projects.getProjectComments(project.id);
     }
     res.status(200).json({
-      projects: projectsPerPage.rows || projectsPerPage,
-      projectLength: projects.length || projects.rowCount,
+      projects: projectsPerPage,
+      projectLength: projects.length,
       message: "Did somebody order some projects"
     });
   } catch (error) {
