@@ -15,8 +15,8 @@ module.exports = {
 //get all projects
 function getProjects(searchParameter) {
   if (searchParameter) {
-    return db.raw(
-      `SELECT * FROM projects WHERE UPPER(name) LIKE UPPER('%${searchParameter}%') or UPPER(description) LIKE UPPER('%${searchParameter}%')`
+    return db("projects").whereRaw(
+      `UPPER(name) LIKE UPPER('%${searchParameter}%') or UPPER(description) LIKE UPPER('%${searchParameter}%')`
     );
   } else {
     return db("projects");
