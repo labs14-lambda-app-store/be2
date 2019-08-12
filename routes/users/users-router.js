@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// endpoint to get user by id     <----------- currently broken
+// endpoint to get user by id
 router.get("/:id", async (req, res) => {
   try {
     const user = await Users.getUserById(req.params.id);

@@ -1,30 +1,30 @@
 const db = require("../../data/dbConfig.js");
 
 module.exports = {
-  getCategories,
-  addCategory,
-  deleteCategory
+  getComments,
+  addComment,
+  deleteComment
 };
 
-//get all categories
-function getCategories() {
-  return db("categories");
+//get all comments
+function getComments() {
+  return db("comments");
 }
 
-//post for adding a category
-function addCategory(category) {
-  return db("categories")
-    .insert(category, "id")
+//post for adding a comment
+function addComment(comment) {
+  return db("comments")
+    .insert(comment, "id")
     .then(ids => {
-      return db("categories")
+      return db("comments")
         .where({ id: ids[0] })
         .first();
     });
 }
 
-// for deleting a category
-function deleteCategory(id) {
-  return db("categories")
+// for deleting a comment
+function deleteComment(id) {
+  return db("comments")
     .where({ id })
     .del();
 }
