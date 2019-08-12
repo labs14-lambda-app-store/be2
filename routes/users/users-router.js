@@ -38,8 +38,12 @@ router.post("/", async (req, res) => {
   try {
     let user = await Users.getUserBySubId(req.body.sub_id);
     if (!user) {
+      //the next two lines create a user and then return newly created user with sub_id
       user = await Users.addUser(req.body);
-      res.status(201).json({ message: "User successfully registered.", user });
+      let returnUser = await Users.getUserBySubId(req.body.sub_id);
+      res
+        .status(201)
+        .json({ message: "User successfully registered.", user: returnUser });
     } else {
       res.status(201).json({ message: "User successfully logged in.", user });
     }
