@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
       let returnUser = await Users.getUserBySubId(req.body.sub_id);
       res
         .status(201)
-        .json({ message: "User successfully registered.", returnUser });
+        .json({ message: "User successfully registered.", user: returnUser });
     } else {
       res.status(201).json({ message: "User successfully logged in.", user });
     }
