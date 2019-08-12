@@ -38,6 +38,7 @@ router.post("/", async (req, res) => {
   try {
     let user = await Users.getUserBySubId(req.body.sub_id);
     if (!user) {
+      //the next two lines create a user and then return newly created user with sub_id
       user = await Users.addUser(req.body);
       let returnUser = await Users.getUserBySubId(req.body.sub_id);
       res
