@@ -67,6 +67,16 @@ exports.seed = function(knex, Promise) {
           first_name: "James",
           last_name: "Starks",
           pictureURL: "example url"
+        },
+        {
+          username: "lambda.app.store",
+          email: "lambda.app.store@gmail.com",
+          role: "admin",
+          sub_id: "google-oauth2|111329742811325396789",
+          first_name: "Lambda",
+          last_name: "AppStore",
+          pictureURL:
+            "https://lh5.googleusercontent.com/-QsiiVDXM4co/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcrXpr93nmVy2bDhY2D3E61BrvOWQ/photo.jpg"
         }
       ]);
     });
