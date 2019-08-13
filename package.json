@@ -4,6 +4,7 @@
   "description": "Labs 14 - Lambda App Store - Backend",
   "main": "index.js",
   "scripts": {
+    "cypress:open": "cypress open",
     "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watch",
     "start": "node index.js"
