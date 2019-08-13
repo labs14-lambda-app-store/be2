@@ -22,6 +22,7 @@
   "devDependencies": {
     "jest": "^23.6.0",
     "nodemon": "^1.19.1",
+    "cypress": "^3.4.1",
     "supertest": "^3.3.0"
   },
   "dependencies": {
