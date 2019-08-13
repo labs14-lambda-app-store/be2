@@ -15,7 +15,7 @@ exports.seed = function(knex, Promise) {
             "A place for Lambda Students to showcase their beautiful apps!",
           frontend_url: "https://github.com/labs14-lambda-app-store/be2",
           backend_url: "https://github.com/labs14-lambda-app-store/FE2",
-          hosted_url: "www.lambdaappstore.org",
+          hosted_url: "https://lambdaappstore.org/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
             "https://source.unsplash.com/1600x900/?technology,computer,typing",
