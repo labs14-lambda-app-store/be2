@@ -158,31 +158,38 @@ To get the server running locally:
 }
 ```
 
-## 2️⃣ Actions
+##  Actions
 
-🚫 This is an example, replace this with the actions that pertain to your backend
 
-`getOrgs()` -> Returns all organizations
+`getAllApps()` -> Returns all apps in DB with no filters or pagination
 
-`getOrg(orgId)` -> Returns a single organization by ID
+`getAppsPerPage(page, searchParameter, approvedFilter)` -> Returns set amount of apps at a time (currently 12 apps) and uses approvedFilter parameter to change the is_approved DB query
 
-`addOrg(org)` -> Returns the created org
+`getAppById(id)` -> Returns app by ID
 
-`updateOrg(orgId)` -> Update an organization by ID
+`getAppTags(id)` -> Returns all tags for a given app
 
-`deleteOrg(orgId)` -> Delete an organization by ID
+`getAppCategory(id)` -> Returns category for a given app
+
+`getAppComments(id)` -> Returns comments for a given app
+
+`addApp(app)` -> Creates a new app
+
+`updateApp(id, app)` -> Updates an existing app
+
+`deleteApp(id)` -> Deletes an existing app
 <br>
 <br>
 <br>
-`getUsers(orgId)` -> if no param all users
+`getUsers()` -> Returns all users
 
-`getUser(userId)` -> Returns a single user by user ID
+`getUserById(id)` -> Returns a single user by user ID
 
-`addUser(user object)` --> Creates a new user and returns that user. Also creates 7 availabilities defaulted to hours of operation for their organization.
+`addUser(id)` --> Creates a new user
 
-`updateUser(userId, changes object)` -> Updates a single user by ID.
+`updateUser(id, user)` -> Updates a single user by ID
 
-`deleteUser(userId)` -> deletes everything dependent on the user
+`deleteUser(id)` -> Deletes an existing user by ID
 
 ## 3️⃣ Environment Variables
 
