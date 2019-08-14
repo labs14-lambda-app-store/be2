@@ -15,9 +15,9 @@ To get the server running locally:
 🚫 adjust these scripts to match your project
 
 - Clone this repo
-- **yarn install** to install all required dependencies
-- **yarn server** to start the local server
-- **yarn test** to start server using testing environment
+- **npm install** to install all required dependencies
+- **npm run server** to start the local server
+- **npm run test** to start server using testing environment
 
 ### Backend framework goes here
 
@@ -35,10 +35,20 @@ To get the server running locally:
 | Method | Endpoint                | Access Control | Description                                  |
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
 | GET    | `/api/users` | all users      | Returns the information for all users. |
-| GET    | `/api/users/:id` | all users      | Returns the information for an individual user. |
+| GET    | `/api/users/:id` | all users      | Returns the information for an individual user by ID. |
 | POST    | `/api/users` | all users         | Creates a new user.             |
 | PUT | `/api/users/:id` | all users         | Updates an existing user by ID.                      |
 | DELETE | `/api/users/:id` | all users         | Deletes an existing user by ID.                      |
+
+#### App Routes
+
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/apps` | all users      | Returns all projects that match query strings given for searching and pagination. |
+| GET    | `/api/apps/:id` | all users      | Returns the information for an individual app by ID. |
+| POST    | `/api/apps` | all users         | Creates a new app.             |
+| PUT | `/api/apps/:id` | all users         | Updates an existing app by ID.                      |
+| DELETE | `/api/apps/:id` | all users         | Deletes an existing app by ID.                      |
 
 
 # Data Model
