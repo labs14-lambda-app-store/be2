@@ -28,7 +28,7 @@ To get the server running locally:
 -    Point Three
 -    Point Four
 
-## 2️⃣ Endpoints
+## Endpoints
 
 #### User Routes
 
@@ -50,43 +50,74 @@ To get the server running locally:
 | PUT | `/api/apps/:id` | all users         | Updates an existing app by ID.                      |
 | DELETE | `/api/apps/:id` | all users         | Deletes an existing app by ID.                      |
 
+#### Category Routes
+
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/categories` | all users      | Returns all categories. |
+| POST    | `/api/categories` | all users         | Creates a new category.             |
+| DELETE | `/api/categories/:id` | all users         | Deletes an existing category by ID.                      |
+
+#### Tag Routes
+
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/tags` | all users      | Returns all tags. |
+| POST    | `/api/tags` | all users         | Creates a new tag.             |
+| DELETE | `/api/tags/:id` | all users         | Deletes an existing tag by ID.                      |
+
+#### Comment Routes
+
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/comments` | all users      | Returns all comments. |
+| POST    | `/api/comments` | all users         | Creates a new comment.             |
+| DELETE | `/api/comments/:id` | all users         | Deletes an existing comment by ID.                      |
+
 
 # Data Model
 
-🚫This is just an example. Replace this with your data model
 
-#### 2️⃣ ORGANIZATIONS
+
+####  USERS
 
 ---
 
 ```
 {
-  id: UUID
-  name: STRING
-  industry: STRING
-  paid: BOOLEAN
-  customer_id: STRING
-  subscription_id: STRING
+  id: INTEGER (auto-increment)
+  username: STRING
+  email: STRING
+  role: STRING
+  sub_id: STRING
+  first_name: STRING
+  last_name: STRING
+  pictureURL: STRING
 }
 ```
 
-#### USERS
+
+#### APPS
 
 ---
 
 ```
 {
-  id: UUID
-  organization_id: UUID foreign key in ORGANIZATIONS table
-  first_name: STRING
-  last_name: STRING
-  role: STRING [ 'owner', 'supervisor', 'employee' ]
-  email: STRING
-  phone: STRING
-  cal_visit: BOOLEAN
-  emp_visit: BOOLEAN
-  emailpref: BOOLEAN
-  phonepref: BOOLEAN
+  id: INTEGER (auto-increment)
+  name: STRING
+  is_approved: BOOLEAN (defaults to false)
+  description: STRING
+  hosted_url: STRING 
+  frontend_url: STRING
+  backend_url: STRING
+  submitted_at: STRING
+  approved_at: STRING
+  display_image: STRING
+  in_development: BOOLEAN
+  is_live: BOOLEAN
+  is_featured: BOOLEAN
+  category_id: INTEGER (foreign key: categories)
+  tags: ARRAY (connected to tags table)
 }
 ```
 
