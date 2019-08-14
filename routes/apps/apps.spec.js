@@ -1,31 +1,32 @@
 const server = require("../../api/server");
 const supertest = require("supertest");
 const db = require("../../data/dbConfig");
-const { addProject } = require("./projects-model");
+const { addApp } = require("./apps-model");
 
-describe("Projects", () => {
+describe("Apps", () => {
   beforeEach(async () => {
-    await db("projects").truncate();
+    await db("apps").truncate();
   });
   describe("GET /", () => {
     it("should return JSON", () => {
       return supertest(server)
-        .get("/api/projects")
+        .get("/api/apps")
         .expect("content-type", /json/i);
     });
     it("should return a 200 status code", () => {
       return supertest(server)
-        .get("/api/projects")
+        .get("/api/apps")
         .expect(200);
     });
   });
   describe("POST /", () => {
     it("should return with a 201 status code", async () => {
-      const project =   {
+      const app = {
         name: "Lambda App Store 1",
         category_id: 1,
         is_approved: 0,
-        description: "A place for Lambda Students to showcase their beautiful apps!",
+        description:
+          "A place for Lambda Students to showcase their beautiful apps!",
         hosted_url: "example hosted url 1",
         frontend_url: "https://github.com/labs14-lambda-app-store/be2",
         backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -38,38 +39,40 @@ describe("Projects", () => {
         is_featured: 0
       };
       const res = await supertest(server)
-        .post("/api/projects")
-        .send(project)
+        .post("/api/apps")
+        .send(app);
       expect(res.status).toBe(201);
     });
     it("should return with JSON", async () => {
-        const project =   {
-          name: "Lambda App Store 1",
-          category_id: 1,
-          is_approved: 0,
-          description: "A place for Lambda Students to showcase their beautiful apps!",
-          hosted_url: "example hosted url 1",
-          frontend_url: "https://github.com/labs14-lambda-app-store/be2",
-          backend_url: "https://github.com/labs14-lambda-app-store/FE2",
-          submitted_at: "July 18th at 1:00 PM",
-          approved_at: "",
-          display_image: "example url",
-          tags: "example tags",
-          in_development: 1,
-          is_live: 0,
-          is_featured: 0
-        };
-        const res = await supertest(server)
-          .post("/api/projects")
-          .send(project)
-        .expect('content-type', /json/i)
-      })
-    it("should insert projects", async () => {
-      await addProject({
+      const app = {
+        name: "Lambda App Store 1",
+        category_id: 1,
+        is_approved: 0,
+        description:
+          "A place for Lambda Students to showcase their beautiful apps!",
+        hosted_url: "example hosted url 1",
+        frontend_url: "https://github.com/labs14-lambda-app-store/be2",
+        backend_url: "https://github.com/labs14-lambda-app-store/FE2",
+        submitted_at: "July 18th at 1:00 PM",
+        approved_at: "",
+        display_image: "example url",
+        tags: "example tags",
+        in_development: 1,
+        is_live: 0,
+        is_featured: 0
+      };
+      const res = await supertest(server)
+        .post("/api/apps")
+        .send(app)
+        .expect("content-type", /json/i);
+    });
+    it("should insert apps", async () => {
+      await addApp({
         name: "Lambda App Store 1",
         category_id: 1,
         is_approved: false,
-        description: "A place for Lambda Students to showcase their beautiful apps!",
+        description:
+          "A place for Lambda Students to showcase their beautiful apps!",
         hosted_url: "example hosted url 1",
         frontend_url: "https://github.com/labs14-lambda-app-store/be2",
         backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -81,11 +84,12 @@ describe("Projects", () => {
         is_live: false,
         is_featured: false
       });
-      await addProject({
+      await addApp({
         name: "Lambda App Store 2",
         category_id: 1,
         is_approved: false,
-        description: "A place for Lambda Students to showcase their beautiful apps!",
+        description:
+          "A place for Lambda Students to showcase their beautiful apps!",
         hosted_url: "example hosted url 2",
         frontend_url: "https://github.com/labs14-lambda-app-store/be2",
         backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -97,9 +101,9 @@ describe("Projects", () => {
         is_live: false,
         is_featured: false
       });
-      const projects = await db('projects')
+      const apps = await db("apps");
 
-      expect(projects).toHaveLength(2)
+      expect(apps).toHaveLength(2);
     });
   });
 });
