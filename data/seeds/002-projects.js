@@ -18,7 +18,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://lambdaappstore.org/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?technology,computer,typing",
+            "https://source.unsplash.com/700x390/?technology,computer,typing",
           is_approved: true
         },
         {
@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
             "https://thoughtcatalog.com/january-nelson/2018/06/poop-jokes/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?beans,coffee,bathroom",
+            "https://source.unsplash.com/700x390/?beans,coffee,bathroom",
           is_approved: false
         },
         {
@@ -46,7 +46,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.youtube.com/watch?v=CsGYh8AacgY",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?horse,unicorn,fantasy",
+            "https://source.unsplash.com/700x390/?horse,unicorn,fantasy",
           is_approved: true
         },
         {
@@ -60,7 +60,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.stvincentdepaul.net/programs",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?food,garbage,earth",
+            "https://source.unsplash.com/700x390/?food,garbage,earth",
           is_approved: true
         },
         {
@@ -74,7 +74,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.netflix.com/title/70242311",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?prison,factory,inmate",
+            "https://source.unsplash.com/700x390/?prison,factory,inmate",
           is_approved: false
         },
         {
@@ -88,7 +88,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://en.wikipedia.org/wiki/Animal_Crossing",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?flowers,wildflowers",
+            "https://source.unsplash.com/700x390/?flowers,wildflowers",
           is_approved: true
         },
         {
@@ -102,7 +102,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.bobross.com/Default.asp",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?mountain,peak,forest",
+            "https://source.unsplash.com/700x390/?mountain,peak,forest",
           is_approved: false
         },
         {
@@ -116,7 +116,7 @@ exports.seed = function(knex, Promise) {
           hosted_url:
             "https://www.amazon.com/My-Way-Highway-Micromanagement-Survival/dp/1576752968",
           submitted_at: "July 18th at 1:00 PM",
-          display_image: "https://source.unsplash.com/700x350/?woman,mom,lady",
+          display_image: "https://source.unsplash.com/700x390/?woman,mom,lady",
           is_approved: true
         },
         {
@@ -129,7 +129,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://codecombat.com/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?babies,kids,firefly",
+            "https://source.unsplash.com/700x390/?babies,kids,firefly",
           is_approved: false
         },
         {
@@ -144,7 +144,7 @@ exports.seed = function(knex, Promise) {
             "https://www.psychologytoday.com/us/blog/freudian-sip/201102/how-find-the-best-therapist-you",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?scream,talk,hug",
+            "https://source.unsplash.com/700x390/?scream,talk,hug",
           is_approved: true
         },
         {
@@ -159,7 +159,7 @@ exports.seed = function(knex, Promise) {
             "https://www.urbandictionary.com/define.php?term=sportsball",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?football,soccer,basketball",
+            "https://source.unsplash.com/700x390/?football,soccer,basketball",
           is_approved: false
         },
         {
@@ -172,7 +172,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.makeuseof.com/tag/browser-text-based-games/",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?video-games,games,gaming",
+            "https://source.unsplash.com/700x390/?video-games,games,gaming",
           is_approved: true
         },
         {
@@ -187,7 +187,7 @@ exports.seed = function(knex, Promise) {
             "https://www.amazon.com/Kids-Electronics-Tamagotchi-Toys-Games/s?rh=n%3A166164011%2Cp_lbr_characters_browse-bin%3ATamagotchi",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?pets,games,toys",
+            "https://source.unsplash.com/700x390/?pets,games,toys",
           is_approved: false
         },
         {
@@ -227,7 +227,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.flydenver.com/",
           submitted_at: "July 27th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?airport,airplane,airfield",
+            "https://source.unsplash.com/700x390/?airport,airplane,airfield",
           is_approved: false
         },
         {
@@ -241,7 +241,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://en.wikipedia.org/wiki/Assisted_suicide",
           submitted_at: "July 28th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?germs,elderly,skydive,fire",
+            "https://source.unsplash.com/700x390/?germs,elderly,skydive,fire",
           is_approved: true
         },
         {
@@ -255,7 +255,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.etsy.com/market/fancy_baby_dress",
           submitted_at: "July 20th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?baby,newborn,infant",
+            "https://source.unsplash.com/700x390/?baby,newborn,infant",
           is_approved: true
         },
         {
@@ -269,7 +269,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://seniorpath.com/common-assisted-living-issues/",
           submitted_at: "July 14th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?grandmother,grandfather,elderly",
+            "https://source.unsplash.com/700x390/?grandmother,grandfather,elderly",
           is_approved: false
         },
         {
@@ -283,7 +283,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://mishkahenner.com/Feedlots",
           submitted_at: "July 2th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?meat,butcher,steak",
+            "https://source.unsplash.com/700x390/?meat,butcher,steak",
           is_approved: true
         },
         {
@@ -297,7 +297,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.hallmark.com/birthday/",
           submitted_at: "July 3th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?birthday,cake,wine",
+            "https://source.unsplash.com/700x390/?birthday,cake,wine",
           is_approved: false
         },
         {
@@ -310,7 +310,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://greenkansas.wixsite.com/theappleseedcast/merch",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?blackbird,crow,raven",
+            "https://source.unsplash.com/700x390/?blackbird,crow,raven",
           is_approved: true
         },
         {
@@ -323,7 +323,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://frenchfriesmachine.com/blog.html",
           submitted_at: "July 18th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?fries,frenchfry,fry",
+            "https://source.unsplash.com/700x390/?fries,frenchfry,fry",
           is_approved: false
         },
         {
@@ -337,7 +337,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://www.wikihow.com/Stop-Lying",
           submitted_at: "July 31th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?flame,spiderweb,cave",
+            "https://source.unsplash.com/700x390/?flame,spiderweb,cave",
           is_approved: true
         },
         {
@@ -351,7 +351,7 @@ exports.seed = function(knex, Promise) {
             "https://runsignup.com/Race/CO/Brighton/RunsWithScissorsRaces",
           submitted_at: "July 30th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?scissors,forest,pool",
+            "https://source.unsplash.com/700x390/?scissors,forest,pool",
           is_approved: false
         },
         {
@@ -366,7 +366,7 @@ exports.seed = function(knex, Promise) {
             "https://www.themarshallproject.org/2019/04/03/when-violent-offenders-commit-nonviolent-crimes",
           submitted_at: "July 27th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?house,neighborhood,suburb",
+            "https://source.unsplash.com/700x390/?house,neighborhood,suburb",
           is_approved: true
         },
         {
@@ -379,7 +379,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "http://www.angelfire.com/ca4/illimattic/fanclub.html",
           submitted_at: "July 24th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?waterfall,river,glacier",
+            "https://source.unsplash.com/700x390/?waterfall,river,glacier",
           is_approved: false
         },
         {
@@ -393,7 +393,7 @@ exports.seed = function(knex, Promise) {
           hosted_url:
             "https://thebark.com/content/reading-dogs-help-children-learn",
           submitted_at: "July 16th at 1:00 PM",
-          display_image: "https://source.unsplash.com/700x350/?puppy,dog,wolf",
+          display_image: "https://source.unsplash.com/700x390/?puppy,dog,wolf",
           is_approved: true
         },
         {
@@ -406,7 +406,7 @@ exports.seed = function(knex, Promise) {
           hosted_url: "https://twitter.com/planitchange10?lang=en",
           submitted_at: "July 1th at 1:00 PM",
           display_image:
-            "https://source.unsplash.com/700x350/?earth,ocean,glacier",
+            "https://source.unsplash.com/700x390/?earth,ocean,glacier",
           is_approved: false
         }
       ]);
