@@ -160,7 +160,18 @@ To get the server running locally:
 
 ##  Actions
 
+`getUsers()` -> Returns all users
 
+`getUserById(id)` -> Returns a single user by user ID
+
+`addUser(id)` --> Creates a new user
+
+`updateUser(id, user)` -> Updates a single user by ID
+
+`deleteUser(id)` -> Deletes an existing user by ID
+<br>
+<br>
+<br>
 `getAllApps()` -> Returns all apps in DB with no filters or pagination
 
 `getAppsPerPage(page, searchParameter, approvedFilter)` -> Returns set amount of apps at a time (currently 12 apps) and uses approvedFilter parameter to change the is_approved DB query
@@ -181,15 +192,30 @@ To get the server running locally:
 <br>
 <br>
 <br>
-`getUsers()` -> Returns all users
+`getCategories()` -> Returns all categories
 
-`getUserById(id)` -> Returns a single user by user ID
+`addCategory(category)` -> Creates a new category
 
-`addUser(id)` --> Creates a new user
+`deleteCategory(id)` --> Deletes an existing category by ID
+<br>
+<br>
+<br>
+`getTags()` -> Returns all tags
 
-`updateUser(id, user)` -> Updates a single user by ID
+`addTag(tag)` -> Creates a new tag
 
-`deleteUser(id)` -> Deletes an existing user by ID
+`deleteTag(id)` --> Deletes an existing tag by ID
+<br>
+<br>
+<br>
+`getComments()` -> Returns all comments
+
+`addComments(comment)` -> Creates a new comment
+
+`deleteComment(id)` --> Deletes an existing comment by ID
+<br>
+<br>
+<br>
 
 ## 3️⃣ Environment Variables
 
