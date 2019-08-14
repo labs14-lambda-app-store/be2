@@ -5,11 +5,11 @@ exports.up = async function(knex, Promise) {
         table.increments();
         table.string("comment").notNullable();
         table
-          .integer("project_id")
+          .integer("app_id")
           .unsigned()
           .notNullable()
           .references("id")
-          .inTable("projects")
+          .inTable("apps")
           .onDelete("CASCADE")
           .onUpdate("CASCADE");
       });

@@ -1,7 +1,7 @@
 exports.up = async function(knex, Promise) {
-  return await knex.schema.hasTable("projects").then(exists => {
+  return await knex.schema.hasTable("apps").then(exists => {
     if (!exists) {
-      return knex.schema.createTable("projects", table => {
+      return knex.schema.createTable("apps", table => {
         table.increments();
         table
           .string("name")
@@ -35,7 +35,7 @@ exports.up = async function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists("projects");
+  return knex.schema.dropTableIfExists("apps");
 };
 
 //Fix for potential future bug involving upgrading migrations

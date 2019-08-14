@@ -7,16 +7,16 @@ exports.seed = function(knex, Promise) {
       return knex("comments").insert([
         {
           comment: "This is a great start but it needs more work.",
-          project_id: 1
+          app_id: 1
         },
         {
           comment:
             "Let's totally and for seriously refactor all of it to be mobile first, React Native, and written in Python",
-          project_id: 1
+          app_id: 1
         },
         {
           comment: "I've never seen a more useful app.  Let's get this funded.",
-          project_id: 2
+          app_id: 2
         }
       ]);
     });
