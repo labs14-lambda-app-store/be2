@@ -6,13 +6,12 @@
 
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
+####  Backend delpoyed at lambdaappstore.herokuapp.com
 
-## 1️⃣ Getting started
+##  Getting started
 
 To get the server running locally:
 
-🚫 adjust these scripts to match your project
 
 - Clone this repo
 - **npm install** to install all required dependencies
@@ -20,6 +19,10 @@ To get the server running locally:
 - **npm run test** to start server using testing environment
 
 ### Backend framework goes here
+
+- Node.js
+- Express 
+- Moment.js
 
 🚫 Why did you choose this framework?
 
@@ -118,6 +121,40 @@ To get the server running locally:
   is_featured: BOOLEAN
   category_id: INTEGER (foreign key: categories)
   tags: ARRAY (connected to tags table)
+}
+```
+
+#### CATEGORIES
+
+---
+
+```
+{
+  id: INTEGER (auto-increment)
+  category_name: STRING 
+}
+```
+
+#### TAGS
+
+---
+
+```
+{
+  id: INTEGER (auto-increment)
+  tag_name: STRING 
+}
+```
+
+#### COMMENTS
+
+---
+
+```
+{
+  id: INTEGER (auto-increment)
+  comment: STRING 
+  app_id: INTEGER (foreign key: apps)
 }
 ```
 
