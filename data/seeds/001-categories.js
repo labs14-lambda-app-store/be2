@@ -2,12 +2,12 @@ exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex
     //add this for testing on sqlite environment, remove for production
-    ('categories')
-    .truncate()
+    // ('categories')
+    // .truncate()
     /* This .raw function allows for truncation while being referenced in a foreign key */
-    // .raw(
-    //   "TRUNCATE TABLE categories RESTART IDENTITY CASCADE"
-    // ) 
+    .raw(
+      "TRUNCATE TABLE categories RESTART IDENTITY CASCADE"
+    ) 
     .then(function() {
       // Inserts seed entries
       return knex("categories").insert([
