@@ -13,8 +13,8 @@ exports.up = async function(knex, Promise) {
           .unique();
         table.string("role").notNullable();
         table.string("sub_id").notNullable();
-        table.string("first_name").notNullable();
-        table.string("last_name").notNullable();
+        table.string("first_name");
+        table.string("last_name");
         table.string("pictureURL");
       });
     }
