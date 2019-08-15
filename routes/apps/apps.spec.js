@@ -7,8 +7,7 @@ const app = {
   name: "Lambda App Store 1",
   category_id: 1,
   is_approved: 0,
-  description:
-    "A place for Lambda Students to showcase their beautiful apps!",
+  description: "A place for Lambda Students to showcase their beautiful apps!",
   hosted_url: "example hosted url 1",
   frontend_url: "https://github.com/labs14-lambda-app-store/be2",
   backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -23,8 +22,7 @@ const appTwo = {
   name: "Lambda App Store 2",
   category_id: 1,
   is_approved: false,
-  description:
-    "A place for Lambda Students to showcase their beautiful apps!",
+  description: "A place for Lambda Students to showcase their beautiful apps!",
   hosted_url: "example hosted url 2",
   frontend_url: "https://github.com/labs14-lambda-app-store/be2",
   backend_url: "https://github.com/labs14-lambda-app-store/FE2",
@@ -34,7 +32,7 @@ const appTwo = {
   in_development: true,
   is_live: false,
   is_featured: false
-}
+};
 
 describe("Apps", () => {
   beforeEach(async () => {
