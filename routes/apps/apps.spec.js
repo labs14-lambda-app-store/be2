@@ -13,16 +13,41 @@ describe("Apps", () => {
         .get("/api/apps")
         .expect("content-type", /json/i);
     });
-    it("should return a 200 status code", () => {
+    it("should return a 200 status code when approved = false", () => {
+      return supertest(server)
+        .get("/api/apps?approved=false")
+        .expect(200);
+    });
+    it("should return a 200 status code when approved = true", () => {
+      return supertest(server)
+        .get("/api/apps?approved=true")
+        .expect(200);
+    });
+    it("should return a 500 status code when there is no approved parameter and page = 1", () => {
+      return supertest(server)
+        .get("/api/apps?page=1")
+        .expect(500);
+    });
+    it("should return a 200 status code when searchParameter = anything", () => {
+      return supertest(server)
+        .get("/api/apps?search=anything")
+        .expect(200);
+    });
+    it("should return a 200 status code when approved = true and page = 1", () => {
+      return supertest(server)
+        .get("/api/apps?approved=true&page=1")
+        .expect(200);
+    });
+    it("should return a 500 status code when there is no approved query", () => {
       return supertest(server)
         .get("/api/apps")
-        .expect(200);
+        .expect(500);
     });
   });
   describe("POST /", () => {
     it("should return with a 201 status code", async () => {
       const app = {
-        name: "Lambda App Store 1",
+        name: "Lambda App Store 4",
         category_id: 1,
         is_approved: 0,
         description:
@@ -33,7 +58,6 @@ describe("Apps", () => {
         submitted_at: "July 18th at 1:00 PM",
         approved_at: "",
         display_image: "example url",
-        tags: "example tags",
         in_development: 1,
         is_live: 0,
         is_featured: 0
@@ -56,7 +80,6 @@ describe("Apps", () => {
         submitted_at: "July 18th at 1:00 PM",
         approved_at: "",
         display_image: "example url",
-        tags: "example tags",
         in_development: 1,
         is_live: 0,
         is_featured: 0
@@ -79,7 +102,6 @@ describe("Apps", () => {
         submitted_at: "July 18th at 1:00 PM",
         approved_at: "",
         display_image: "example url",
-        tags: "example tags",
         in_development: true,
         is_live: false,
         is_featured: false
@@ -96,7 +118,6 @@ describe("Apps", () => {
         submitted_at: "July 18th at 1:00 PM",
         approved_at: "",
         display_image: "example url",
-        tags: "example tags",
         in_development: true,
         is_live: false,
         is_featured: false
