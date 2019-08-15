@@ -1,10 +1,13 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('tags')
+  return knex
+  //add this for testing on sqlite environment, remove for production
+  ('tags')
   .truncate()
+    /* This .raw function allows for truncation while being referenced in a foreign key */
     // .raw(
     //   "TRUNCATE TABLE tags RESTART IDENTITY CASCADE"
-    // ) /* This .raw function allows for truncation while being referenced in a foreign key */
+    // ) 
     .then(function() {
       // Inserts seed entries
       return knex("tags").insert([

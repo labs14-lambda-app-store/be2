@@ -47,7 +47,7 @@ describe("Apps", () => {
   describe("POST /", () => {
     it("should return with a 201 status code", async () => {
       const app = {
-        name: "Lambda App Store 4",
+        name: "Lambda App Store 1",
         category_id: 1,
         is_approved: 0,
         description:
