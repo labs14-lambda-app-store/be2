@@ -8,6 +8,14 @@ const localPgConnection = {
   port: process.env.DB_PORT
 };
 
+const testingPgConnection = {
+  host: process.env.TESTING_HOST,
+  database: process.env.TESTING_DATABASE,
+  user: process.env.TESTING_USERNAME,
+  password: process.env.TESTING_PASSWORD,
+  port: process.env.TESTING_PORT
+};
+
 const dbConnection = process.env.DATABASE_URL || localPgConnection;
 
 module.exports = {
@@ -23,11 +31,23 @@ module.exports = {
     useNullAsDefault: true
   },
 
+  // testing: {
+  //   client: "sqlite3",
+  //   connection: {
+  //     filename: "./data/test.db3"
+  //   },
+  //   useNullAsDefault: true,
+  //   migrations: {
+  //     directory: "./data/migrations"
+  //   },
+  //   seeds: {
+  //     directory: "./data/seeds"
+  //   }
+  // },
+
   testing: {
-    client: "sqlite3",
-    connection: {
-      filename: "./data/test.db3"
-    },
+    client: "pg",
+    connection: testingPgConnection,
     useNullAsDefault: true,
     migrations: {
       directory: "./data/migrations"
