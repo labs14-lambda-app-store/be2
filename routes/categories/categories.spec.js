@@ -38,7 +38,7 @@ describe("Categories", () => {
         .expect("content-type", /json/i);
     });
   });
-  describe('DELETE /', () => {
+  describe("DELETE /", () => {
     it("should return a 200 when removing category", async () => {
       const category = { category_name: "Business" };
       await supertest(server)
@@ -51,5 +51,5 @@ describe("Categories", () => {
 
       expect(res.status).toBe(200);
     });
-  })
+  });
 });
