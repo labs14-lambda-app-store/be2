@@ -36,11 +36,11 @@ router.get("/:id", async (req, res) => {
 //endpoint to create a new user
 router.post("/", async (req, res) => {
   try {
-    let user = await Users.getUserBySubId(req.body.sub_id);
+    let user = await Users.getUserByEmail(req.body.email);
     if (!user) {
-      //the next two lines create a user and then return newly created user with sub_id
+      //the next two lines create a user and then return newly created user with email
       user = await Users.addUser(req.body);
-      let returnUser = await Users.getUserBySubId(req.body.sub_id);
+      let returnUser = await Users.getUserByEmail(req.body.email);
       res
         .status(201)
         .json({ message: "User successfully registered.", user: returnUser });

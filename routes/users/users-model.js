@@ -4,6 +4,7 @@ module.exports = {
   getUsers,
   getUserById,
   getUserBySubId,
+  getUserByEmail,
   addUser,
   updateUser,
   deleteUser
@@ -25,6 +26,13 @@ function getUserById(id) {
 function getUserBySubId(id) {
   return db("users")
     .where("sub_id", id)
+    .first();
+}
+
+// get user by email
+function getUserByEmail(email) {
+  return db("users")
+    .where({ email })
     .first();
 }
 
