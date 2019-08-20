@@ -1,4 +1,4 @@
-exposts.up = async function(knex, Promise) {
+exports.up = async function(knex, Promise) {
   return await knex.schema.hasTable("users_apps").then(exists => {
     if (!exists) {
       return knex.schema.createTable("users_apps", table => {
