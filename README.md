@@ -175,6 +175,18 @@ To get the server running locally:
 }
 ```
 
+#### APPS-TAGS
+
+---
+
+```
+{
+  id: INTEGER (auto-increment)
+  app_id: INTEGER (foreign key: apps)
+  tag_id: INTEGER (foreign key: tags)
+}
+```
+
 ##  Actions
 
 `getUsers()` -> Returns all users
