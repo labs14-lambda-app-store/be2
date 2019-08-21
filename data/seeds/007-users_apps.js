@@ -1,5 +1,5 @@
+/* For testing on a local sqlite environment DO NOT run seeds. */
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
   return knex("users_apps")
     .truncate()
     .then(function() {
