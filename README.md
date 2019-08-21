@@ -247,6 +247,9 @@ To get the server running locally:
 <br>
 <br>
 <br>
+`getAppTags()` -> Returns all Apps-Tags relationships
+`addAppTag(app_tag)` -> Creates a new App-Tag relationship
+`deleteAppTag(id)` -> Deletes an exsiting App-Tag relationship by ID
 
 ##  Environment Variables
 
