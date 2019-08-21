@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(comments);
   } catch (err) {
     if (environment === "production") {
-      res.status(500).json({ message: "error getting comments " });
+      res.status(500).json({ message: "Error getting comments " });
     } else {
       console.log("Error getting the comment ", err);
       res.status(500).json(err);
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
     res.status(201).json({ message: "comment successfully created." });
   } catch (error) {
     if (environment === "production") {
-      res.status(500).json({ message: "error creating that comment " });
+      res.status(500).json({ message: "Error creating that comment " });
     } else {
       console.log("Creating comment error ", error);
       res.status(500).json({ message: "Error creating that comment.", error });
@@ -50,7 +50,7 @@ router.delete("/:id", async (req, res) => {
     }
   } catch (error) {
     if (environment === "production") {
-      res.status(500).json({ message: "error deleting that comment " });
+      res.status(500).json({ message: "Error deleting that comment " });
     } else {
       console.log("Delete comment error: ", error);
       res.status(500).json({ message: "Error deleting that comment.", error });
