@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const Users = require("./users-model.js");
 
-const environment = process.env.DB_ENV || "development";
+const environment = process.env.DB_ENV;
 
 //endpoint to get all users
 // router.get("/", restricted, async (req, res) => {    <----- restricted endpoints not yet set up because convenience reasons???

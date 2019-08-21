@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Post endpoint to add a UserApp
+// Post endpoint to add a UserApp relation
 router.post("/", async (req, res) => {
   try {
     const userApp = await UsersApps.addUserApp(req.body);
@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Delete endpoint for deleting a UserApp
+// Delete endpoint for deleting a UserApp Relation
 router.delete("/:id", async (req, res) => {
   try {
     const count = await UsersApps.deleteUserApp(req.params.id);

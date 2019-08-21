@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const Tags = require("./tags-model");
 
-const environment = process.env.DB_ENV || "development";
+const environment = process.env.DB_ENV;
 
 // Get for the tags
 router.get("/", async (req, res) => {
