@@ -86,6 +86,14 @@ To get the server running locally:
 | POST    | `/api/comments` | all users         | Creates a new comment.             |
 | DELETE | `/api/comments/:id` | all users         | Deletes an existing comment by ID.                      |
 
+#### App-Tag Routes
+
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/appsTags` | all users      | Returns all app-tag objects. |
+| POST    | `/api/appsTags` | all users         | Creates a new app-tag object.             |
+| DELETE | `/api/appsTags/:id` | all users         | Deletes an existing app-tag object by ID.                      |
+
 
 # Data Model
 
