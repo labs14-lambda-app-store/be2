@@ -71,12 +71,12 @@ function getAppTags(id) {
     .where("p.id", id);
 }
 
-//get category for a app
+//get category for an app
 function getAppCategory(id) {
   return db("categories as c").where("c.id", id);
 }
 
-//get comments for a app
+//get comments for an app
 function getAppComments(id) {
   return db("comments as c").where("c.app_id", id);
 }

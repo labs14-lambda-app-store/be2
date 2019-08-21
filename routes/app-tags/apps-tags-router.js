@@ -5,6 +5,7 @@ const App_Tags = require("./apps-tags-model");
 
 const environment = process.env.DB_ENV;
 
+// endpoint to get all app-tags
 router.get("/", async (req, res) => {
   try {
     const app_tags = await App_Tags.getAppTags();
@@ -19,6 +20,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// endpoint to add a new app-tag relation
 router.post("/", async (req, res) => {
   try {
     const app_tag = await App_Tags.addAppsTag(req.body);
@@ -33,6 +35,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// endpoint to delete an app-tag relation by id
 router.delete("/:id", async (req, res) => {
   try {
     const count = await App_Tags.deleteAppsTag(req.params.id);

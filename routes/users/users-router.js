@@ -20,8 +20,9 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const user = await Users.getUserById(req.params.id);
+    const apps = await Users.getUserApps(req.params.id);
     if (user) {
-      res.status(200).json(user);
+      res.status(200).json({ ...user, apps });
     } else {
       res
         .status(404)

@@ -5,6 +5,7 @@ module.exports = {
   getUserById,
   getUserBySubId,
   getUserByEmail,
+  getUserApps,
   addUser,
   updateUser,
   deleteUser
@@ -34,6 +35,15 @@ function getUserByEmail(email) {
   return db("users")
     .where({ email })
     .first();
+}
+
+//get all apps for a user
+function getUserApps(id) {
+  return db("users as u")
+    .join("users_apps as ua", "ua.user_id", "u.id")
+    .join("apps as a", "a.id", "ua.app_id")
+    .select("a.*")
+    .where("u.id", id);
 }
 
 // post for adding a user
