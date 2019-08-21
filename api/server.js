@@ -10,6 +10,7 @@ const categoriesRouter = require("../routes/categories/categories-router.js");
 const usersRouter = require("../routes/users/users-router.js");
 const tagsRouter = require("../routes/tags/tags-router.js");
 const commentsRouter = require("../routes/comments/comments-router.js");
+const usersAppsRouter = require("../routes/users-apps/users-apps-router.js");
 const appTagsRouter = require("../routes/app-tags/apps-tags-router.js");
 
 server.use("/api/apps", appsRouter);
@@ -17,6 +18,7 @@ server.use("/api/categories", categoriesRouter);
 server.use("/api/users", usersRouter);
 server.use("/api/tags", tagsRouter);
 server.use("/api/comments", commentsRouter);
+server.use("/api/usersApps", usersAppsRouter);
 server.use("/api/appTags", appTagsRouter);
 
 const repoUrl = `https://github.com/labs14-lambda-app-store`;

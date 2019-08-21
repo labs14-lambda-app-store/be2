@@ -37,5 +37,3 @@ exports.up = async function(knex, Promise) {
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("apps");
 };
-
-//Fix for potential future bug involving upgrading migrations
