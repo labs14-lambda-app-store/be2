@@ -94,6 +94,14 @@ To get the server running locally:
 | POST    | `/api/appsTags` | all users         | Creates a new app-tag object.             |
 | DELETE | `/api/appsTags/:id` | all users         | Deletes an existing app-tag object by ID.                      |
 
+#### User-App Routes
+
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/usersApps` | all users      | Returns all user-app objects. |
+| POST    | `/api/usersApps` | all users         | Creates a new user-app object.             |
+| DELETE | `/api/usersApps/:id` | all users         | Deletes an existing user-app object by ID.                      |
+
 
 # Data Model
 
@@ -187,6 +195,18 @@ To get the server running locally:
 }
 ```
 
+#### USERS-APPS
+
+---
+
+```
+{
+  id: INTEGER (auto-increment)
+  user_id: INTEGER (foreign key: users)
+  app_id: INTEGER (foreign key: apps)
+}
+```
+
 ##  Actions
 
 `getUsers()` -> Returns all users
@@ -250,6 +270,12 @@ To get the server running locally:
 `getAppTags()` -> Returns all Apps-Tags relationships
 `addAppTag(app_tag)` -> Creates a new App-Tag relationship
 `deleteAppTag(id)` -> Deletes an exsiting App-Tag relationship by ID
+<br>
+<br>
+<br>
+`getUsersApps()` -> Returns all User-App relationships
+`addUserApp(user_app)` -> Creates a new User-App relationship
+`deleteUserApp(id)` -> Deletes an exsiting User-App relationship by ID
 
 ##  Environment Variables
 
