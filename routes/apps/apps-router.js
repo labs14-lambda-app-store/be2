@@ -78,9 +78,11 @@ router.get("/:id", async (req, res) => {
 
 //endpoint to create new app
 router.post("/", async (req, res) => {
+  //extracts the user_id out of the req.body object
   const { user_id, ...newApp } = req.body;
   try {
     const app = await Apps.addApp(newApp);
+    // takes new app created above and uses its id to add a user_app relation
     const userApp = await UsersApps.addUserApp({ user_id, app_id: app.id });
     res.status(201).json({ message: "App successfully created." });
   } catch (error) {
