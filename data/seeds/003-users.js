@@ -36,6 +36,16 @@ exports.seed = function(knex, Promise) {
             last_name: "Starks",
             pictureURL:
               "https://lh5.googleusercontent.com/-f2ssIvhm75c/AAAAAAAAAAI/AAAAAAAAAEQ/CCDNP4gnMWg/photo.jpg"
+          },
+          {
+            username: "victornguyen082",
+            email: "victornguyen082@gmail.com",
+            role: "student",
+            sub_id: "google-oauth2|112793741661516564371",
+            first_name: "Victor",
+            last_name: "Nguyen",
+            pictureURL:
+              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
           }
         ]);
       })
