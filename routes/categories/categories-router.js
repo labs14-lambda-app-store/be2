@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const Categories = require("./categories-model");
 
-const environment = process.env.DB_ENV || "development";
+const environment = process.env.DB_ENV;
 
 //endpoint to get all categories
 router.get("/", async (req, res) => {

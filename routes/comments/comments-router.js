@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const Comments = require("./comments-model");
 
-const environment = process.env.DB_ENV || "development";
+const environment = process.env.DB_ENV;
 
 // Get for the comments
 router.get("/", async (req, res) => {
