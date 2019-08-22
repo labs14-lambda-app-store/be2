@@ -85,10 +85,7 @@ function getAppComments(id) {
 function addApp(app) {
   return db("apps")
     .insert(app, ["id"])
-    .then(ids => {
-      console.log({ ids });
-      return ids;
-    });
+    .then(ids => ids[0]);
 }
 
 //update existing app

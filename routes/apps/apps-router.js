@@ -81,8 +81,7 @@ router.post("/", async (req, res) => {
   const { user_id, ...newApp } = req.body;
   try {
     const app = await Apps.addApp(newApp);
-    console.log({ app });
-    const userApp = await UsersApps.addUserApp({ user_id, app_id: app[0].id });
+    const userApp = await UsersApps.addUserApp({ user_id, app_id: app.id });
     res.status(201).json({ message: "App successfully created." });
   } catch (error) {
     if (environment === "production") {
