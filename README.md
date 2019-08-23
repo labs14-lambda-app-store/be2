@@ -1,26 +1,25 @@
 # Lambda App Store - Backend
+
 ### Lambda School Labs 14
 
 ### Contributors:
 
-|                                                      [Jeff Lapp](https://github.com/lappjeff)                                                       |                                                      [David Clavijo](https://github.com/davichodavid)                                                       |                                                    [Chris Petito](https://github.com/chrispetito)                                                     |                                                    [James Starks](https://github.com/Shadowborn)                                                    |                                                    [Victor Ngyuen](https://github.com/victor082)                                                     |                                                [Joshua Disney](https://github.com/Joshua-Disney)                                                |                                                      [Kayla Crow](https://github.com/blackmacaroon)                                                       
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                      [Jeff Lapp](https://github.com/lappjeff)                                                      |                                                       [Chris Petito](https://github.com/chrispetito)                                                       |                                                       [James Starks](https://github.com/Shadowborn)                                                       |                                                     [Victor Ngyuen](https://github.com/victor082)                                                      |                                                  [Joshua Disney](https://github.com/Joshua-Disney)                                                   |                                                        [Kayla Crow](https://github.com/blackmacaroon)                                                        |
+| :------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [<img src="https://github.com/lappjeff.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;" />](https://github.com/lappjeff) | [<img src="https://github.com/davichodavid.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;" />](https://github.com/davichodavid) | [<img src="https://github.com/chrispetito.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;"  />](https://github.com/chrispetito) | [<img src="https://github.com/Shadowborn.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;" />](https://github.com/Shadowborn) | [<img src="https://github.com/victor082.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;" />](https://github.com/victor082) | [<img src="https://github.com/Joshua-Disney.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;" />](https://github.com/Joshua-Disney) | [<img src="https://github.com/blackmacaroon.png" width= "100" height="auto" style="object-fit:cover; overflow:hidden;" />](https://github.com/blackmacaroon) |
-|                                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lappjeff)                                   |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/davichodavid)                                 |                                  [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/chrispetito)                                  |                               [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Shadowborn)                                |                               [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/victor082)                               |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Joshua-Disney)                                |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/blackmacaroon)                                |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jeffrey-lapp-622298181/)                 |              [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/david-clavijo-6855a6180/)               |     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/chris-petito-349499184/)     |      [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-starks-2547b392/)       |      [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/victor-nguyen-bb5898177/)       |              [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/joshua-disney-553325176/)              |              [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/kayla-crow/)              
+|                               [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lappjeff)                                |                                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/davichodavid)                                  |                                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/chrispetito)                                  |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Shadowborn)                                 |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/victor082)                                |                                  [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Joshua-Disney)                                  | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/blackmacaroon) |
+|      [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jeffrey-lapp-622298181/)       |          [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/david-clavijo-6855a6180/)          |          [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/chris-petito-349499184/)          |         [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-starks-2547b392/)         |       [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/victor-nguyen-bb5898177/)       |           [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/joshua-disney-553325176/)           | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/kayla-crow/) |
 
 <br>
 <br>
-
 
 # API Documentation
 
-####  Backend delpoyed at lambdaappstore.herokuapp.com
+#### Backend delpoyed at lambdaappstore.herokuapp.com
 
-##  Getting started
+## Getting started
 
 To get the server running locally:
-
 
 - Clone this repo
 - **npm install** to install all required dependencies
@@ -30,84 +29,81 @@ To get the server running locally:
 ### Backend framework goes here
 
 - Node.js
-- Express 
+- Express
 - Moment.js
 
- Why did you choose this framework?
+Why did you choose this framework?
 
--    Point One
--    Point Two
--    Point Three
--    Point Four
+- Point One
+- Point Two
+- Point Three
+- Point Four
 
 ## Endpoints
 
 #### User Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/users` | all users      | Returns the information for all users. |
+| Method | Endpoint         | Access Control | Description                                           |
+| ------ | ---------------- | -------------- | ----------------------------------------------------- |
+| GET    | `/api/users`     | all users      | Returns the information for all users.                |
 | GET    | `/api/users/:id` | all users      | Returns the information for an individual user by ID. |
-| POST    | `/api/users` | all users         | Creates a new user.             |
-| PUT | `/api/users/:id` | all users         | Updates an existing user by ID.                      |
-| DELETE | `/api/users/:id` | all users         | Deletes an existing user by ID.                      |
+| POST   | `/api/users`     | all users      | Creates a new user.                                   |
+| PUT    | `/api/users/:id` | all users      | Updates an existing user by ID.                       |
+| DELETE | `/api/users/:id` | all users      | Deletes an existing user by ID.                       |
 
 #### App Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/apps` | all users      | Returns all projects that match query strings given for searching and pagination. |
-| GET    | `/api/apps/:id` | all users      | Returns the information for an individual app by ID. |
-| POST    | `/api/apps` | all users         | Creates a new app.             |
-| PUT | `/api/apps/:id` | all users         | Updates an existing app by ID.                      |
-| DELETE | `/api/apps/:id` | all users         | Deletes an existing app by ID.                      |
+| Method | Endpoint        | Access Control | Description                                                                       |
+| ------ | --------------- | -------------- | --------------------------------------------------------------------------------- |
+| GET    | `/api/apps`     | all users      | Returns all projects that match query strings given for searching and pagination. |
+| GET    | `/api/apps/:id` | all users      | Returns the information for an individual app by ID.                              |
+| POST   | `/api/apps`     | all users      | Creates a new app.                                                                |
+| PUT    | `/api/apps/:id` | all users      | Updates an existing app by ID.                                                    |
+| DELETE | `/api/apps/:id` | all users      | Deletes an existing app by ID.                                                    |
 
 #### Category Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/categories` | all users      | Returns all categories. |
-| POST    | `/api/categories` | all users         | Creates a new category.             |
-| DELETE | `/api/categories/:id` | all users         | Deletes an existing category by ID.                      |
+| Method | Endpoint              | Access Control | Description                         |
+| ------ | --------------------- | -------------- | ----------------------------------- |
+| GET    | `/api/categories`     | all users      | Returns all categories.             |
+| POST   | `/api/categories`     | all users      | Creates a new category.             |
+| DELETE | `/api/categories/:id` | all users      | Deletes an existing category by ID. |
 
 #### Tag Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/tags` | all users      | Returns all tags. |
-| POST    | `/api/tags` | all users         | Creates a new tag.             |
-| DELETE | `/api/tags/:id` | all users         | Deletes an existing tag by ID.                      |
+| Method | Endpoint        | Access Control | Description                    |
+| ------ | --------------- | -------------- | ------------------------------ |
+| GET    | `/api/tags`     | all users      | Returns all tags.              |
+| POST   | `/api/tags`     | all users      | Creates a new tag.             |
+| DELETE | `/api/tags/:id` | all users      | Deletes an existing tag by ID. |
 
 #### Comment Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/comments` | all users      | Returns all comments. |
-| POST    | `/api/comments` | all users         | Creates a new comment.             |
-| DELETE | `/api/comments/:id` | all users         | Deletes an existing comment by ID.                      |
+| Method | Endpoint            | Access Control | Description                        |
+| ------ | ------------------- | -------------- | ---------------------------------- |
+| GET    | `/api/comments`     | all users      | Returns all comments.              |
+| POST   | `/api/comments`     | all users      | Creates a new comment.             |
+| DELETE | `/api/comments/:id` | all users      | Deletes an existing comment by ID. |
 
 #### App-Tag Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/appsTags` | all users      | Returns all app-tag objects. |
-| POST    | `/api/appsTags` | all users         | Creates a new app-tag object.             |
-| DELETE | `/api/appsTags/:id` | all users         | Deletes an existing app-tag object by ID.                      |
+| Method | Endpoint            | Access Control | Description                               |
+| ------ | ------------------- | -------------- | ----------------------------------------- |
+| GET    | `/api/appsTags`     | all users      | Returns all app-tag objects.              |
+| POST   | `/api/appsTags`     | all users      | Creates a new app-tag object.             |
+| DELETE | `/api/appsTags/:id` | all users      | Deletes an existing app-tag object by ID. |
 
 #### User-App Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/api/usersApps` | all users      | Returns all user-app objects. |
-| POST    | `/api/usersApps` | all users         | Creates a new user-app object.             |
-| DELETE | `/api/usersApps/:id` | all users         | Deletes an existing user-app object by ID.                      |
-
+| Method | Endpoint             | Access Control | Description                                |
+| ------ | -------------------- | -------------- | ------------------------------------------ |
+| GET    | `/api/usersApps`     | all users      | Returns all user-app objects.              |
+| POST   | `/api/usersApps`     | all users      | Creates a new user-app object.             |
+| DELETE | `/api/usersApps/:id` | all users      | Deletes an existing user-app object by ID. |
 
 # Data Model
 
-
-
-####  USERS
+#### USERS
 
 ---
 
@@ -124,7 +120,6 @@ To get the server running locally:
 }
 ```
 
-
 #### APPS
 
 ---
@@ -135,7 +130,7 @@ To get the server running locally:
   name: STRING
   is_approved: BOOLEAN (defaults to false)
   description: STRING
-  hosted_url: STRING 
+  hosted_url: STRING
   frontend_url: STRING
   backend_url: STRING
   submitted_at: STRING
@@ -156,7 +151,7 @@ To get the server running locally:
 ```
 {
   id: INTEGER (auto-increment)
-  category_name: STRING 
+  category_name: STRING
 }
 ```
 
@@ -167,7 +162,7 @@ To get the server running locally:
 ```
 {
   id: INTEGER (auto-increment)
-  tag_name: STRING 
+  tag_name: STRING
 }
 ```
 
@@ -178,7 +173,7 @@ To get the server running locally:
 ```
 {
   id: INTEGER (auto-increment)
-  comment: STRING 
+  comment: STRING
   app_id: INTEGER (foreign key: apps)
 }
 ```
@@ -207,7 +202,7 @@ To get the server running locally:
 }
 ```
 
-##  Actions
+## Actions
 
 `getUsers()` -> Returns all users
 
@@ -277,20 +272,18 @@ To get the server running locally:
 `addUserApp(user_app)` -> Creates a new User-App relationship
 `deleteUserApp(id)` -> Deletes an exsiting User-App relationship by ID
 
-##  Environment Variables
+## Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables.
 
 create a .env file that includes the following:
 
-    
-    *  REACT_APP_OAUTH_CLIENT_ID = 
-    *  REACT_APP_OAUTH_DOMAIN = 
-    *  REACT_APP_CLOUDINARY_URL = 
-    *  REACT_APP_CLOUDINARY_UPLOAD_PRESET = 
-    
-## Contributing
+    *  REACT_APP_OAUTH_CLIENT_ID =
+    *  REACT_APP_OAUTH_DOMAIN =
+    *  REACT_APP_CLOUDINARY_URL =
+    *  REACT_APP_CLOUDINARY_UPLOAD_PRESET =
 
+## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
@@ -298,11 +291,12 @@ Please note we have a [code of conduct](./code_of_conduct.md). Please follow it 
 
 ### Issue/Bug Request
 
- **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+
+- Check first to see if your issue has already been reported.
+- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+- Create a live example of the problem.
+- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
