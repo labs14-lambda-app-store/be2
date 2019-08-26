@@ -23,17 +23,16 @@ router.get("/", async (req, res) => {
 // endpoint to add a new app-tag relation
 router.post("/", async (req, res) => {
   try {
-    req.body.tags.forEach(tag => {
+    req.body.tags.forEach(async tag => {
       console.log(tag);
+      App_Tags.addAppTag(tag);
     });
-
-    // const app_tag = await App_Tags.addAppsTag(req.body);
     res.status(201).json({ message: "App_tag successfully created." });
   } catch (error) {
     if (environment === "production") {
       res.status(500).json({ message: "Error creating that app_tag" });
     } else {
-      cconsole.log("Create app_tag error : ", error);
+      console.log("Create app_tag error : ", error);
       res.status(500).json({ message: "Error creating that app_tag", error });
     }
   }
