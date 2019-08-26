@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
     if (environment === "production") {
       res.status(500).json({ message: "Error creating that category" });
     } else {
-      cconsole.log("Create category error", error);
+      console.log("Create category error", error);
       res.status(500).json({ message: "Error creating that category", error });
     }
   }

@@ -23,7 +23,11 @@ router.get("/", async (req, res) => {
 // endpoint to add a new app-tag relation
 router.post("/", async (req, res) => {
   try {
-    const app_tag = await App_Tags.addAppsTag(req.body);
+    req.body.tags.forEach(tag => {
+      console.log(tag);
+    });
+
+    // const app_tag = await App_Tags.addAppsTag(req.body);
     res.status(201).json({ message: "App_tag successfully created." });
   } catch (error) {
     if (environment === "production") {
