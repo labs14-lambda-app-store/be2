@@ -24,15 +24,15 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     req.body.tags.forEach(async tag => {
-      console.log(tag);
-      App_Tags.addAppTag(tag);
+      let app_tag = await App_Tags.addAppTag(tag);
     });
+
     res.status(201).json({ message: "App_tag successfully created." });
   } catch (error) {
     if (environment === "production") {
       res.status(500).json({ message: "Error creating that app_tag" });
     } else {
-      console.log("Create app_tag error : ", error);
+      cconsole.log("Create app_tag error : ", error);
       res.status(500).json({ message: "Error creating that app_tag", error });
     }
   }
@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
 // endpoint to delete an app-tag relation by id
 router.delete("/:id", async (req, res) => {
   try {
-    const count = await App_Tags.deleteAppsTag(req.params.id);
+    const count = await App_Tags.deleteAppTag(req.params.id);
     if (count > 0) {
       res.status(200).json({
         message: "The app_tag has been removed"
