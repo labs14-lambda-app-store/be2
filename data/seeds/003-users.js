@@ -46,6 +46,26 @@ exports.seed = function(knex, Promise) {
             last_name: "Nguyen",
             pictureURL:
               "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
+          },
+          {
+            username: "lappjeff20",
+            email: "dadsaidicould200@gmail.com",
+            role: "student",
+            sub_id: "google-oauth2|11272131231236564371",
+            first_name: "Jeff",
+            last_name: "Lapp",
+            pictureURL:
+              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
+          },
+          {
+            username: "lappjeff2000",
+            email: "dadsaidicould20@gmail.com",
+            role: "student",
+            sub_id: "google-oauth2|1127213123121231231564371",
+            first_name: "Jeff",
+            last_name: "Lapp",
+            pictureURL:
+              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
           }
         ]);
       })
