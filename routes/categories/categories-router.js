@@ -2,8 +2,9 @@ const express = require("express");
 
 const router = express.Router();
 const Categories = require("./categories-model");
-
+const helpers = require("../../helpers");
 const environment = process.env.DB_ENV;
+const { returnSafeErrorMessage } = helpers;
 
 //endpoint to get all categories
 router.get("/", async (req, res) => {
@@ -11,12 +12,7 @@ router.get("/", async (req, res) => {
     const categories = await Categories.getCategories();
     res.status(200).json(categories);
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error getting categories" });
-    } else {
-      console.log("Get categories error", error);
-      res.status(500).json({ message: "Error getting categories", error });
-    }
+    returnSafeErrorMessage(res, "Error getting categories", error);
   }
 });
 
@@ -26,12 +22,7 @@ router.post("/", async (req, res) => {
     const category = await Categories.addCategory(req.body);
     res.status(201).json({ message: "Category successfully created." });
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error creating that category" });
-    } else {
-      console.log("Create category error", error);
-      res.status(500).json({ message: "Error creating that category", error });
-    }
+    returnSafeErrorMessage(res, "Error creating that category", error);
   }
 });
 

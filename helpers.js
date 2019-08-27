@@ -2,12 +2,12 @@ const environment = process.env.DB_ENV;
 
 //checks if environment is production and returns a safe error message for users
 //else returns message useful for development
-const returnSafeErrorMessage = res => {
+const returnSafeErrorMessage = (res, message, error) => {
   if (environment === "production") {
-    res.status(500).json({ message: "Error getting categories" });
+    res.status(500).json({ message });
   } else {
     console.log("Get categories error", error);
-    res.status(500).json({ message: "Error getting categories", error });
+    res.status(500).json({ message, error });
   }
 };
 
