@@ -57,9 +57,8 @@ Why did you choose this framework?
 | ------ | --------------- | -------------- | --------------------------------------------------------------------------------- |
 | GET    | `/api/apps/all` | all users      | Returns all projects |
 | GET    | `/api/apps?approved=boolean`| all users | Returns all approved or unapproved projects based off of query boolean |
-| GET    | `/api/apps?search=string`| all users | Returns all approved projects where project description or name includes string query |
+| GET    | `/api/apps?search=string`| all users | Returns all approved projects where project description or name includes string query|
 | GET    | `/api/apps?approved=boolean&search=string`| all users | Returns all approved projects where approved is equal to boolean and project description or name includes string query |
-
 | GET    | `/api/apps/:id` | all users      | Returns the information for an individual app by ID.                              |
 | POST   | `/api/apps`     | all users      | Creates a new app.                                                                |
 | PUT    | `/api/apps/:id` | all users      | Updates an existing app by ID.                                                    |
