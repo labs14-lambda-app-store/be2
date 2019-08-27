@@ -2,7 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 const UsersApps = require("./users-apps-model");
-
+const helpers = require("../../helpers");
+const { returnSafeErrorMessage } = helpers;
 const environment = process.env.DB_ENV;
 
 // Get for the UsersApps
@@ -26,12 +27,7 @@ router.post("/", async (req, res) => {
     let user_app = await UsersApps.addUserApp(req.body.users);
     res.status(201).json({ message: "UserApp successfully created." });
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error creating that UserApp." });
-    } else {
-      console.log("Creating UserApp error ", error);
-      res.status(500).json({ message: "Error creating that UserApp.", error });
-    }
+    returnSafeErrorMessage(res, "Error creating that UserApp", error);
   }
 });
 

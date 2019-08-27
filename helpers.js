@@ -7,13 +7,12 @@ const returnSafeErrorMessage = (res, message, error) => {
   if (environment === "production") {
     res.status(500).json({ message });
   } else {
-    console.log(error);
     console.log(`
       ********************
       ${message}
       ********************
       ${error}`);
-    res.status(500).json({ message, error });
+    res.status(500).json({ message });
   }
 };
 
