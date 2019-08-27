@@ -71,13 +71,16 @@ router.get("/all", async (req, res) => {
     }
   }
 });
+
 //endpoint to get app by id
 router.get("/:id", async (req, res) => {
   try {
     const app = await Apps.getAppById(req.params.id);
     const tags = await Apps.getAppTags(req.params.id);
+    const users = await Apps.getAppUsers(req.params.id);
+    const category = await Apps.getAppCategory(app.category_id);
     if (app) {
-      res.status(200).json({ ...app, tags });
+      res.status(200).json({ ...app, tags, category, users });
     } else {
       res
         .status(404)
