@@ -23,11 +23,8 @@ router.get("/", async (req, res) => {
 // endpoint to add a new app-tag relation
 router.post("/", async (req, res) => {
   try {
-    const app_tags = await req.body.tags.forEach(tag => {
-      if (!tag.app_id || !tag.tag_id) throw "missing property";
-
-      let app_tag = App_Tags.addAppTag(tag);
-    });
+    let app_tag = App_Tags.addAppTag(req.body.tags);
+    console.log(req.body.tags);
     res.status(201).json({ message: "App_tag successfully created." });
   } catch (error) {
     console.log(error);
