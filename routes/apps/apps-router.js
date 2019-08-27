@@ -54,6 +54,23 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/all", async (req, res) => {
+  try {
+    const apps = await Apps.getAllApps();
+    res.status(200).json({ apps: apps });
+  } catch (e) {
+    if (environment === "production") {
+      res.status(500).json({
+        message: "Error getting apps "
+      });
+    } else {
+      console.log("Getting apps error:", error);
+      res
+        .status(500)
+        .json({ message: "error getting apps ", error, environment });
+    }
+  }
+});
 //endpoint to get app by id
 router.get("/:id", async (req, res) => {
   try {

@@ -14,7 +14,7 @@ module.exports = {
 };
 
 //gets all apps in DB with no filters or pagination
-function getAllApps(searchParameter, approvedFilter) {
+function getAllApps() {
   return db("apps");
 }
 
