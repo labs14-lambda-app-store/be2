@@ -55,7 +55,7 @@ Why did you choose this framework?
 
 | Method | Endpoint        | Access Control | Description                                                                       |
 | ------ | --------------- | -------------- | --------------------------------------------------------------------------------- |
-| GET    | `/api/apps`     | all users      | Returns all projects that match query strings given for searching and pagination. |
+| GET    | `/api/apps/all` | all users      | Returns all projects |
 | GET    | `/api/apps/:id` | all users      | Returns the information for an individual app by ID.                              |
 | POST   | `/api/apps`     | all users      | Creates a new app.                                                                |
 | PUT    | `/api/apps/:id` | all users      | Updates an existing app by ID.                                                    |
