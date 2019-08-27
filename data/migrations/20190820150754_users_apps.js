@@ -3,6 +3,7 @@ exports.up = async function(knex, Promise) {
     if (!exists) {
       return knex.schema.createTable("users_apps", table => {
         table.increments();
+        table.unique(["user_id", "app_id"]);
         table
           .integer("user_id")
           .unsigned()
