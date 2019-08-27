@@ -23,11 +23,17 @@ router.get("/", async (req, res) => {
 // Post endpoint to add a UserApp relation
 router.post("/", async (req, res) => {
   try {
-    const userApp = await UsersApps.addUserApp(req.body);
+    const add_users = await req.body.users.forEach(user => {
+      if (!user.user_id || !user.app_id) throw "missing property";
+
+      let user_app = UsersApps.addUserApp(user);
+    });
     res.status(201).json({ message: "UserApp successfully created." });
   } catch (error) {
     if (environment === "production") {
       res.status(500).json({ message: "Error creating that UserApp." });
+    } else if (error === "missing property") {
+      res.status(500).json({ message: "Missing app id or user id" });
     } else {
       console.log("Creating UserApp error ", error);
       res.status(500).json({ message: "Error creating that UserApp.", error });
