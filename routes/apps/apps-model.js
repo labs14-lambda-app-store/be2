@@ -8,6 +8,7 @@ module.exports = {
   getAppCategory,
   getAppComments,
   getAppsCount,
+  getAppUsers,
   addApp,
   updateApp,
   deleteApp
@@ -69,6 +70,21 @@ function getAppTags(id) {
     .join("tags as t", "t.id", "pt.tag_id")
     .select("t.*")
     .where("p.id", id);
+}
+
+function getAppUsers(id) {
+  return db("apps as a")
+    .join("users_apps as ua", "ua.app_id", "a.id")
+    .join("users as u", "u.id", "ua.user_id")
+    .select(
+      "u.username",
+      "u.email",
+      "u.first_name",
+      "u.last_name",
+      "u.pictureURL",
+      "u.id"
+    )
+    .where("a.id", id);
 }
 
 //get category for an app
