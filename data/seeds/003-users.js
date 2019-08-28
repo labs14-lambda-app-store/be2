@@ -15,7 +15,11 @@ exports.seed = function(knex, Promise) {
             first_name: "Lambda",
             last_name: "AppStore",
             pictureURL:
-              "https://lh5.googleusercontent.com/-QsiiVDXM4co/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcrXpr93nmVy2bDhY2D3E61BrvOWQ/photo.jpg"
+              "https://lh5.googleusercontent.com/-QsiiVDXM4co/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcrXpr93nmVy2bDhY2D3E61BrvOWQ/photo.jpg",
+            github_link: "https://github.com/labs14-lambda-app-store",
+            linkedin_link: "https://www.linkedin.com/school/lambdaschool/",
+            preferred_pronoun: "They",
+            birthday: ""
           },
           {
             username: "joshua.a.disney",
@@ -25,7 +29,12 @@ exports.seed = function(knex, Promise) {
             first_name: "",
             last_name: "",
             pictureURL:
-              "https://s.gravatar.com/avatar/4095e8ee2ad7e9fa27bd3a69110ce123?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fjo.png"
+              "https://s.gravatar.com/avatar/4095e8ee2ad7e9fa27bd3a69110ce123?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fjo.png",
+            github_link: "https://github.com/Joshua-Disney",
+            linkedin_link:
+              "https://www.linkedin.com/in/joshua-disney-553325176/",
+            preferred_pronoun: "They",
+            birthday: ""
           },
           {
             username: "james.starks023",
@@ -35,7 +44,11 @@ exports.seed = function(knex, Promise) {
             first_name: "James",
             last_name: "Starks",
             pictureURL:
-              "https://lh5.googleusercontent.com/-f2ssIvhm75c/AAAAAAAAAAI/AAAAAAAAAEQ/CCDNP4gnMWg/photo.jpg"
+              "https://lh5.googleusercontent.com/-f2ssIvhm75c/AAAAAAAAAAI/AAAAAAAAAEQ/CCDNP4gnMWg/photo.jpg",
+            github_link: "https://github.com/Shadowborn",
+            linkedin_link: "https://www.linkedin.com/in/james-starks-2547b392/",
+            preferred_pronoun: "They",
+            birthday: ""
           },
           {
             username: "victornguyen082",
@@ -45,7 +58,12 @@ exports.seed = function(knex, Promise) {
             first_name: "Victor",
             last_name: "Nguyen",
             pictureURL:
-              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
+              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA",
+            github_link: "https://github.com/victor082",
+            linkedin_link:
+              "https://www.linkedin.com/in/victor-nguyen-bb5898177/",
+            preferred_pronoun: "They",
+            birthday: ""
           },
           {
             username: "lappjeff20",
@@ -55,7 +73,11 @@ exports.seed = function(knex, Promise) {
             first_name: "Jeff",
             last_name: "Lapp",
             pictureURL:
-              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
+              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA",
+            github_link: "https://github.com/labs14-lambda-app-store",
+            linkedin_link: "https://github.com/lappjeff",
+            preferred_pronoun: "They",
+            birthday: ""
           },
           {
             username: "lappjeff2000",
@@ -65,7 +87,11 @@ exports.seed = function(knex, Promise) {
             first_name: "Jeff",
             last_name: "Lapp",
             pictureURL:
-              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA"
+              "https://lh3.googleusercontent.com/a-/AAuE7mBjzhX83whQmnFfG1_41T5qAlbybHhjhIetZL5jkA",
+            github_link: "https://github.com/labs14-lambda-app-store",
+            linkedin_link: "https://github.com/lappjeff",
+            preferred_pronoun: "They",
+            birthday: ""
           }
         ]);
       })
