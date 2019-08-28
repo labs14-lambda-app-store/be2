@@ -16,6 +16,4 @@ const returnSafeErrorMessage = (res, message, error) => {
   }
 };
 
-module.exports = {
-  returnSafeErrorMessage
-};
+module.exports = { returnSafeErrorMessage };
