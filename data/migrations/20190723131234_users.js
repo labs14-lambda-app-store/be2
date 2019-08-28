@@ -16,6 +16,10 @@ exports.up = async function(knex, Promise) {
         table.string("first_name");
         table.string("last_name");
         table.string("pictureURL");
+        table.string('github_link').defaultTo('')
+        table.string('linkedin_link').defaultTo('')
+        table.string('preferred_pronoun').defaultTo('')
+        table.string('birthday').defaultTo('')
       });
     }
   });

@@ -8,7 +8,7 @@ module.exports = {
 
 //get all tags
 function getTags() {
-  return db("tags");
+  return db("tags").orderBy("tag_name");
 }
 
 //add a new tag
