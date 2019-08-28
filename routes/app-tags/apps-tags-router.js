@@ -6,8 +6,6 @@ const helpers = require("../../helpers");
 
 const { returnSafeErrorMessage } = helpers;
 
-const environment = process.env.DB_ENV;
-
 // endpoint to get all app-tags
 router.get("/", async (req, res) => {
   try {
