@@ -40,12 +40,7 @@ router.delete("/:id", async (req, res) => {
       });
     }
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error deleting that category" });
-    } else {
-      console.log("Delete category error", error);
-      res.status(500).json({ message: "Error deleting that category", error });
-    }
+    returnSafeErrorMessage(res, "Error deleting that category", error);
   }
 });
 
