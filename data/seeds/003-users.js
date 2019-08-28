@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
             github_link: "https://github.com/labs14-lambda-app-store",
             linkedin_link: "https://www.linkedin.com/school/lambdaschool/",
             preferred_pronoun: "They",
-            birthday: ""
+            birthday: "01/01/1990"
           },
           {
             username: "joshua.a.disney",
@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
             linkedin_link:
               "https://www.linkedin.com/in/joshua-disney-553325176/",
             preferred_pronoun: "They",
-            birthday: ""
+            birthday: "01/01/1990"
           },
           {
             username: "james.starks023",
@@ -48,7 +48,7 @@ exports.seed = function(knex, Promise) {
             github_link: "https://github.com/Shadowborn",
             linkedin_link: "https://www.linkedin.com/in/james-starks-2547b392/",
             preferred_pronoun: "They",
-            birthday: ""
+            birthday: "01/01/1990"
           },
           {
             username: "victornguyen082",
@@ -63,7 +63,7 @@ exports.seed = function(knex, Promise) {
             linkedin_link:
               "https://www.linkedin.com/in/victor-nguyen-bb5898177/",
             preferred_pronoun: "They",
-            birthday: ""
+            birthday: "01/01/1990"
           },
           {
             username: "lappjeff20",
@@ -77,7 +77,7 @@ exports.seed = function(knex, Promise) {
             github_link: "https://github.com/labs14-lambda-app-store",
             linkedin_link: "https://github.com/lappjeff",
             preferred_pronoun: "They",
-            birthday: ""
+            birthday: "01/01/1990"
           },
           {
             username: "lappjeff2000",
@@ -91,7 +91,7 @@ exports.seed = function(knex, Promise) {
             github_link: "https://github.com/labs14-lambda-app-store",
             linkedin_link: "https://github.com/lappjeff",
             preferred_pronoun: "They",
-            birthday: ""
+            birthday: "01/01/1990"
           }
         ]);
       })
