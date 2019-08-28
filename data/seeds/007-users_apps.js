@@ -5,12 +5,15 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex("users_apps").insert([
-        { user_id: 2, app_id: 2 },
+        { user_id: 1, app_id: 1 },
+        { user_id: 2, app_id: 1 },
+        { user_id: 3, app_id: 1 },
+        { user_id: 4, app_id: 1 },
+        { user_id: 5, app_id: 1 },
+        { user_id: 6, app_id: 1 },
+        { user_id: 1, app_id: 3 },
         { user_id: 2, app_id: 3 },
-        { user_id: 3, app_id: 3 },
-        { user_id: 3, app_id: 4 },
-        { user_id: 4, app_id: 28 },
-        { user_id: 4, app_id: 29 }
+        { user_id: 3, app_id: 3 }
       ]);
     });
 };

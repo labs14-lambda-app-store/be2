@@ -1,6 +1,8 @@
 const router = require("express").Router();
 
 const Users = require("./users-model.js");
+const Apps = require("../apps/apps-model.js");
+
 const helpers = require("../../helpers");
 const { returnSafeErrorMessage } = helpers;
 
@@ -19,6 +21,14 @@ router.get("/:id", async (req, res) => {
   try {
     const user = await Users.getUserById(req.params.id);
     const apps = await Users.getUserApps(req.params.id);
+
+    for (i = 0; i < apps.length; i++) {
+      const app = apps[i];
+      app.tags = await Apps.getAppTags(app.id);
+      app.category = await Apps.getAppCategory(app.category_id);
+      app.comments = await Apps.getAppComments(app.id);
+    }
+
     if (user) {
       res.status(200).json({ ...user, apps });
     } else {
