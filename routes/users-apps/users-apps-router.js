@@ -4,7 +4,6 @@ const router = express.Router();
 const UsersApps = require("./users-apps-model");
 const helpers = require("../../helpers");
 const { returnSafeErrorMessage } = helpers;
-const environment = process.env.DB_ENV;
 
 // Get for the UsersApps
 router.get("/", async (req, res) => {
@@ -12,12 +11,7 @@ router.get("/", async (req, res) => {
     const usersApps = await UsersApps.getUsersApps();
     res.status(200).json(usersApps);
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error getting UsersApps." });
-    } else {
-      console.log("Error getting the UsersApps", error);
-      res.status(500).json({ message: "Error getting UsersApps.", error });
-    }
+    returnSafeErrorMessage(res, "Error getting UsersApps", error);
   }
 });
 
@@ -40,16 +34,15 @@ router.delete("/:id", async (req, res) => {
         message: "The UserApp has been removed"
       });
     } else {
+      throw "NO_USERAPP";
+    }
+  } catch (error) {
+    if (error === "NO_USERAPP") {
       res.status(404).json({
         message: "The UserApp with the specified ID does not exist."
       });
-    }
-  } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error deleting that UserApp." });
     } else {
-      console.log("Delete UserApp error: ", error);
-      res.status(500).json({ message: "Error deleting that UserApp.", error });
+      returnSafeErrorMessage(res, "Error deleting that UserApp", error);
     }
   }
 });

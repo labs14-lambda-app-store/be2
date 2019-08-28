@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const App_Tags = require("./apps-tags-model");
 const helpers = require("../../helpers");
-
 const { returnSafeErrorMessage } = helpers;
 
 // endpoint to get all app-tags

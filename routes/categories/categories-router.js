@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const Categories = require("./categories-model");
 const helpers = require("../../helpers");
-const environment = process.env.DB_ENV;
 const { returnSafeErrorMessage } = helpers;
 
 //endpoint to get all categories

@@ -1,18 +1,16 @@
 const router = require("express").Router();
 
 const Users = require("./users-model.js");
-
-const environment = process.env.DB_ENV;
+const helpers = require("../../helpers");
+const { returnSafeErrorMessage } = helpers;
 
 //endpoint to get all users
-// router.get("/", restricted, async (req, res) => {    <----- restricted endpoints not yet set up because convenience reasons???
 router.get("/", async (req, res) => {
   try {
     const users = await Users.getUsers();
     res.status(200).json(users);
   } catch (error) {
-    console.log("Get users error : ", error);
-    res.status(500).json({ message: "Error getting users.", error });
+    returnSafeErrorMessage(res, "Get users error", error);
   }
 });
 
@@ -24,13 +22,16 @@ router.get("/:id", async (req, res) => {
     if (user) {
       res.status(200).json({ ...user, apps });
     } else {
+      throw "NO_USER";
+    }
+  } catch (error) {
+    if (error === "NO_USER") {
       res
         .status(404)
         .json({ message: "The user with the specified ID does not exist." });
+    } else {
+      returnSafeErrorMessage(res, "Error getting that user", error);
     }
-  } catch (error) {
-    console.log("Get user by id error : ", error);
-    res.status(500).json({ message: "Error getting that user.", error });
   }
 });
 
@@ -39,7 +40,7 @@ router.post("/", async (req, res) => {
   try {
     let user = await Users.getUserByEmail(req.body.email);
     if (!user) {
-      //the next two lines create a user and then return newly created user with email
+      //the next two lines create or login a user and then return newly created user with email
       user = await Users.addUser(req.body);
       let returnUser = await Users.getUserByEmail(req.body.email);
       res
@@ -49,8 +50,7 @@ router.post("/", async (req, res) => {
       res.status(201).json({ message: "User successfully logged in.", user });
     }
   } catch (error) {
-    console.log("Create user error : ", error);
-    res.status(500).json({ message: "Error creating that user.", error });
+    returnSafeErrorMessage(res, "Error creating that user", error);
   }
 });
 
@@ -62,13 +62,16 @@ router.put("/:id", async (req, res) => {
     if (user) {
       res.status(200).json({ message: "User successfullly updated." });
     } else {
+      throw "NO_USER";
+    }
+  } catch (error) {
+    if (error === "NO_USER") {
       res
         .status(404)
         .json({ message: "The user with the specified ID does not exist." });
+    } else {
+      returnSafeErrorMessage(res, "Error updating that user", error);
     }
-  } catch (error) {
-    console.log("Update user error : ", error);
-    res.status(500).json({ message: "Error updating that user.", error });
   }
 });
 
@@ -81,13 +84,16 @@ router.delete("/:id", async (req, res) => {
         message: "The user has been removed"
       });
     } else {
+      throw "NO_USER";
+    }
+  } catch (error) {
+    if (error === "NO_USER") {
       res.status(404).json({
         message: "The user with the specified ID does not exist."
       });
+    } else {
+      returnSafeErrorMessage(res, "Error deleting that user", error);
     }
-  } catch (error) {
-    console.log("Delete user error : ", error);
-    res.status(500).json({ message: "Error deleting that user.", error });
   }
 });
 

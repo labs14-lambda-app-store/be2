@@ -4,9 +4,7 @@ const router = express.Router();
 const Apps = require("./apps-model");
 const UsersApps = require("../users-apps/users-apps-model");
 const helpers = require("../../helpers");
-
 const { returnSafeErrorMessage } = helpers;
-const environment = process.env.DB_ENV;
 
 //gets all apps that match query strings given for searching and pagination
 router.get("/", async (req, res) => {
