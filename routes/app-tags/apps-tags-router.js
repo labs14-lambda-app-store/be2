@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 // endpoint to add a new app-tag relation
 router.post("/", async (req, res) => {
   try {
-    let app_tag = App_Tags.addAppTag(req.body.tags);
+    let app_tag = await App_Tags.addAppTag(req.body.tags);
     res.status(201).json({ message: "App_tag successfully created." });
   } catch (error) {
     returnSafeErrorMessage(res, "Error creating that app_tag", error);
