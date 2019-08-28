@@ -3,8 +3,8 @@ const express = require("express");
 const router = express.Router();
 const Apps = require("./apps-model");
 const UsersApps = require("../users-apps/users-apps-model");
-
-const environment = process.env.DB_ENV;
+const helpers = require("../../helpers");
+const { returnSafeErrorMessage } = helpers;
 
 //gets all apps that match query strings given for searching and pagination
 router.get("/", async (req, res) => {
@@ -39,18 +39,11 @@ router.get("/", async (req, res) => {
       apps: appsPerPage
     });
   } catch (error) {
-    //only logs the real error if we are not in production
-    if (environment === "production") {
-      res.status(500).json({
-        message:
-          "Error getting apps: please include approved boolean and/or search string in query "
-      });
-    } else {
-      console.log("Getting apps error:", error);
-      res
-        .status(500)
-        .json({ message: "error getting apps ", error, environment });
-    }
+    returnSafeErrorMessage(
+      res,
+      "Error getting apps: please include approved boolean and/or search string in query ",
+      error
+    );
   }
 });
 
@@ -58,17 +51,8 @@ router.get("/all", async (req, res) => {
   try {
     const apps = await Apps.getAllApps();
     res.status(200).json({ apps: apps });
-  } catch (e) {
-    if (environment === "production") {
-      res.status(500).json({
-        message: "Error getting apps "
-      });
-    } else {
-      console.log("Getting apps error:", error);
-      res
-        .status(500)
-        .json({ message: "error getting apps ", error, environment });
-    }
+  } catch (error) {
+    returnSafeErrorMessage(res, "Error getting apps", error);
   }
 });
 
@@ -76,22 +60,18 @@ router.get("/all", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const app = await Apps.getAppById(req.params.id);
+    if (!app) throw "NO_APP";
     const tags = await Apps.getAppTags(req.params.id);
     const users = await Apps.getAppUsers(req.params.id);
     const category = await Apps.getAppCategory(app.category_id);
-    if (app) {
-      res.status(200).json({ ...app, tags, category, users });
-    } else {
+    res.status(200).json({ ...app, tags, category, users });
+  } catch (error) {
+    if (error === "NO_APP") {
       res
         .status(404)
         .json({ message: "The app with the specified ID does not exist." });
-    }
-  } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "error getting that app " });
     } else {
-      console.log("Get app by ID error: ", error);
-      res.status(500).json({ message: "Error getting that app.", error });
+      returnSafeErrorMessage(res, "Error getting that app", error);
     }
   }
 });
@@ -106,33 +86,28 @@ router.post("/", async (req, res) => {
     const userApp = await UsersApps.addUserApp({ user_id, app_id: app.id });
     res.status(201).json({ message: "App successfully created." });
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "error creating apps " });
-    } else {
-      console.log("Create app error: ", error);
-      res.status(500).json({ message: "Error creating that app." });
-    }
+    returnSafeErrorMessage(res, "Error creating that app", error);
   }
 });
 
 //endpoint to update existing app
 router.put("/:id", async (req, res) => {
   const app = req.body;
+  const is_app = await Apps.getAppById(req.params.id);
   try {
-    const updatedApp = await Apps.updateApp(req.params.id, app);
-    if (app) {
+    if (app && is_app) {
       res.status(200).json({ message: "App successfully updated." });
     } else {
+      throw "NO_APP";
+    }
+    const updatedApp = await Apps.updateApp(req.params.id, app);
+  } catch (error) {
+    if (error === "NO_APP") {
       res
         .status(404)
         .json({ message: "The app with the specified ID does not exist." });
-    }
-  } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "error updating apps " });
     } else {
-      console.log("Update app error: ", error);
-      res.status(500).json({ message: "Error updating the app.", error });
+      returnSafeErrorMessage(res, "Error updating app", error);
     }
   }
 });
@@ -149,12 +124,7 @@ router.delete("/:id", async (req, res) => {
         .json({ message: "The app with the specified ID does not exist." });
     }
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "error deleting that app " });
-    } else {
-      console.log("Delete app error : ", error);
-      res.status(500).json({ message: "Error deleting that app", error });
-    }
+    returnSafeErrorMessage(res, "Error deleting that app", error);
   }
 });
 

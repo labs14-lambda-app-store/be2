@@ -3,7 +3,10 @@ exports.up = async function(knex, Promise) {
     if (!exists) {
       return knex.schema.createTable("categories", table => {
         table.increments();
-        table.string("category_name");
+        table
+          .string("category_name")
+          .unique()
+          .notNullable();
       });
     }
   });

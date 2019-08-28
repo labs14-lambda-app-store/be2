@@ -2,8 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 const App_Tags = require("./apps-tags-model");
-
-const environment = process.env.DB_ENV;
+const helpers = require("../../helpers");
+const { returnSafeErrorMessage } = helpers;
 
 // endpoint to get all app-tags
 router.get("/", async (req, res) => {
@@ -11,34 +11,17 @@ router.get("/", async (req, res) => {
     const app_tags = await App_Tags.getAppTags();
     res.status(200).json(app_tags);
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error getting app_tags" });
-    } else {
-      console.log("Get app_tags error : ", error);
-      res.status(500).json({ message: "Error getting app_tags", error });
-    }
+    returnSafeErrorMessage(res, "Error getting app_tags", error);
   }
 });
 
 // endpoint to add a new app-tag relation
 router.post("/", async (req, res) => {
   try {
-    const app_tags = await req.body.tags.forEach(tag => {
-      if (!tag.app_id || !tag.tag_id) throw "missing property";
-
-      let app_tag = App_Tags.addAppTag(tag);
-    });
+    let app_tag = await App_Tags.addAppTag(req.body.tags);
     res.status(201).json({ message: "App_tag successfully created." });
   } catch (error) {
-    console.log(error);
-    if (environment === "production") {
-      res.status(500).json({ message: "Error creating that app_tag" });
-    } else if (error === "missing property") {
-      res.status(500).json({ message: "Missing app id or tag id" });
-    } else {
-      console.log("Create app_tag error : ", error);
-      res.status(500).json({ message: "Error creating that app_tag", error });
-    }
+    returnSafeErrorMessage(res, "Error creating that app_tag", error);
   }
 });
 
@@ -56,12 +39,7 @@ router.delete("/:id", async (req, res) => {
       });
     }
   } catch (error) {
-    if (environment === "production") {
-      res.status(500).json({ message: "Error deleting that app_tag" });
-    } else {
-      console.log("Delete app_tag error : ", error);
-      res.status(500).json({ message: "Error deleting that app_tag", error });
-    }
+    returnSafeErrorMessage(res, "Error deleting that app_tag", error);
   }
 });
 
