@@ -1,10 +1,10 @@
 /* For testing on a local sqlite environment DO NOT run seeds. */
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   return (
     knex
       /* This .raw function allows for truncation while being referenced in a foreign key */
       .raw("TRUNCATE TABLE apps RESTART IDENTITY CASCADE")
-      .then(function() {
+      .then(function () {
         // Inserts seed entries
         return knex("apps").insert([
           {
@@ -23,21 +23,6 @@ exports.seed = function(knex, Promise) {
           },
           {
             //2
-            name: "Crap Map App",
-            category_id: 6,
-            description:
-              "BM in the AM or PM! Crap Map App finds you the nearest loos with the best reviews!",
-            frontend_url: "https://github.com/labs14-lambda-app-store/be2",
-            backend_url: "https://github.com/labs14-lambda-app-store/FE2",
-            hosted_url:
-              "https://thoughtcatalog.com/january-nelson/2018/06/poop-jokes/",
-            submitted_at: "July 18th at 1:00 PM",
-            display_image:
-              "https://source.unsplash.com/700x390/?beans,coffee,bathroom",
-            is_approved: false
-          },
-          {
-            //3
             name: "Unicorn Finder",
             category_id: 11,
             description: "Here there be unicorns!",
@@ -50,7 +35,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //4
+            //3
             name: "RePlate",
             category_id: 8,
             description:
@@ -64,7 +49,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //5
+            //4
             name: "Prisoner Skills",
             category_id: 3,
             description:
@@ -78,7 +63,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //6
+            //5
             name: "FancyPlants",
             category_id: 4,
             description:
@@ -92,7 +77,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //7
+            //6
             name: "Rangr",
             category_id: 17,
             description:
@@ -106,7 +91,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //8
+            //7
             name: "Mommy",
             category_id: 7,
             description:
@@ -121,7 +106,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //9
+            //8
             name: "Firefly",
             category_id: 3,
             description: "Teach the babies to code!!",
@@ -134,7 +119,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //10
+            //9
             name: "Empowered Conversations",
             category_id: 6,
             description:
@@ -149,7 +134,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //11
+            //10
             name: "Sports Ball",
             category_id: 16,
             description:
@@ -164,7 +149,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //12
+            //11
             name: "Text Adventure",
             category_id: 4,
             description: "Save the world one text based decision at a time",
@@ -178,22 +163,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //13
-            name: "Tamagotchi 2",
-            category_id: 4,
-            description:
-              "Do you remember how much you loved your Tamagotchi as a child?  Now Tamagotchi is out of the pocket.  Control your 3D printed pet with an easy to use mobile app",
-            frontend_url: "https://github.com/labs14-lambda-app-store/be2",
-            backend_url: "https://github.com/labs14-lambda-app-store/FE2",
-            hosted_url:
-              "https://www.amazon.com/Kids-Electronics-Tamagotchi-Toys-Games/s?rh=n%3A166164011%2Cp_lbr_characters_browse-bin%3ATamagotchi",
-            submitted_at: "July 18th at 1:00 PM",
-            display_image:
-              "https://source.unsplash.com/700x390/?pets,games,toys",
-            is_approved: false
-          },
-          {
-            //14
+            //12
             name: "Tabless Thursday",
             category_id: 2,
             description:
@@ -202,11 +172,11 @@ exports.seed = function(knex, Promise) {
             backend_url: "https://tabless-thursday-be.herokuapp.com",
             hosted_url: "https://sad-wright-374d2c.netlify.com/",
             submitted_at: "August 1st at 1:00 PM",
-            display_image: "https://gyazo.com/8b1384b476d107448cddac75aa9bf233",
+            display_image: "https://source.unsplash.com/700x390/?tabs,computer,laptop",
             is_approved: true
           },
           {
-            //15
+            //13
             name: "Nifty Market",
             category_id: 4,
             description:
@@ -215,11 +185,11 @@ exports.seed = function(knex, Promise) {
             backend_url: "https://github.com/nifty-markets-build/nifty-backend",
             hosted_url: "https://niftymarkets.netlify.com/",
             submitted_at: "August 1st at 1:00 PM",
-            display_image: "https://gyazo.com/d2dc6a0d2abed761c4d24735aed7b632",
+            display_image: "https://source.unsplash.com/700x390/?market,game,trading",
             is_approved: true
           },
           {
-            //16
+            //14
             name: "Navaid Photometric Testr",
             category_id: 1,
             description:
@@ -233,7 +203,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //17
+            //15
             name: "Dying To Know",
             category_id: 7,
             description:
@@ -247,7 +217,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //18
+            //16
             name: "BB",
             category_id: 3,
             description:
@@ -261,7 +231,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //19
+            //17
             name: "Mimi & Poppy",
             category_id: 11,
             description:
@@ -275,22 +245,8 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //20
-            name: "Grinder",
-            category_id: 8,
-            description:
-              "Bacon tenderloin ham jowel ribeye striploin flank flatiron t-bone baby back drumstick brisket shortrib ",
-            frontend_url: "https://github.com/labs14-lambda-app-store/be2",
-            backend_url: "https://github.com/labs14-lambda-app-store/FE2",
-            hosted_url: "https://mishkahenner.com/Feedlots",
-            submitted_at: "July 2th at 1:00 PM",
-            display_image:
-              "https://source.unsplash.com/700x390/?meat,butcher,steak",
-            is_approved: true
-          },
-          {
-            //21
-            name: "iBrthday",
+            //18
+            name: "iBirthday",
             category_id: 12,
             description:
               "host, organize, invite, decorate, cater, rent, register - all with the swipe of a finger!",
@@ -303,21 +259,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //22
-            name: "Crows",
-            category_id: 5,
-            description: "CAW. CAW. CAW. caw caw caw caw caw caw caw. CAW. ",
-            frontend_url: "https://github.com/labs14-lambda-app-store/be2",
-            backend_url: "https://github.com/labs14-lambda-app-store/FE2",
-            hosted_url:
-              "https://greenkansas.wixsite.com/theappleseedcast/merch",
-            submitted_at: "July 18th at 1:00 PM",
-            display_image:
-              "https://source.unsplash.com/700x390/?blackbird,crow,raven",
-            is_approved: true
-          },
-          {
-            //23
+            //19
             name: "McFry",
             category_id: 15,
             description: "never eat oversalted soggy fries again",
@@ -330,7 +272,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //24
+            //20
             name: "Pants On Fire",
             category_id: 9,
             description:
@@ -344,7 +286,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //25
+            //21
             name: "Run with Scissors",
             category_id: 4,
             description: "its fun! and other great advice.",
@@ -358,7 +300,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //26
+            //22
             name: "Good Behavior",
             category_id: 14,
             description:
@@ -373,7 +315,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //27
+            //23
             name: "Do Go",
             category_id: 17,
             description: "chasing waterfalls. explore, rate, review",
@@ -386,7 +328,7 @@ exports.seed = function(knex, Promise) {
             is_approved: false
           },
           {
-            //28
+            //24
             name: "Doggo",
             category_id: 10,
             description:
@@ -401,7 +343,7 @@ exports.seed = function(knex, Promise) {
             is_approved: true
           },
           {
-            //29
+            //25
             name: "PlanIt Change",
             category_id: 18,
             description: "because we have less than ten years.",
