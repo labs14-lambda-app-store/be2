@@ -163,7 +163,7 @@ exports.seed = function(knex, Promise) {
           {
             //11
             username: "aliciakeys27",
-            email: "mcclintock43@gmail.com",
+            email: "aliciakeys27@gmail.com",
             role: "student",
             sub_id: "google-oauth2|3316165434735146848435451441",
             first_name: "Alicia",
