@@ -7,24 +7,24 @@ exports.seed = function(knex, Promise) {
       .then(function() {
         // Inserts seed entries
         return knex("tags").insert([
-          { tag_name: "JavaScript" },
-          { tag_name: "CSS" },
-          { tag_name: "React" },
-          { tag_name: "Node" },
-          { tag_name: "Java" },
-          { tag_name: "Python" },
-          { tag_name: "React Native" },
-          { tag_name: "C#" },
-          { tag_name: "C++" },
-          { tag_name: "Android" },
-          { tag_name: "iOS" },
-          { tag_name: "Ruby" },
-          { tag_name: "Postgres" },
-          { tag_name: "MongoDB" },
-          { tag_name: "TypeScript" },
-          { tag_name: "Material-UI" },
-          { tag_name: "Reactstrap" },
-          { tag_name: "Bootstrap" }
+          { tag_name: "JavaScript" }, //1
+          { tag_name: "CSS" }, //2
+          { tag_name: "React" }, //3
+          { tag_name: "Node" }, //4
+          { tag_name: "Java" }, //5
+          { tag_name: "Python" }, //6
+          { tag_name: "React Native" }, //7
+          { tag_name: "C#" }, //8
+          { tag_name: "C++" }, //9
+          { tag_name: "Android" }, //10
+          { tag_name: "iOS" }, //11
+          { tag_name: "Ruby" }, //12
+          { tag_name: "Postgres" }, //13
+          { tag_name: "MongoDB" }, //14
+          { tag_name: "TypeScript" }, //15
+          { tag_name: "Material-UI" }, //16
+          { tag_name: "Reactstrap" }, //17
+          { tag_name: "Bootstrap" } //18
         ]);
       })
   );
